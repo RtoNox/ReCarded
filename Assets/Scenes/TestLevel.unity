@@ -663,6 +663,48 @@ MonoBehaviour:
       spawnDelay: 1
     delayBeforeWaveStarts: 1
     waveTimer: 15
+  - enemyGroups:
+    - enemyPrefab: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      amount: 8
+      spawnDelay: 1
+    delayBeforeWaveStarts: 2
+    waveTimer: 20
+  - enemyGroups:
+    - enemyPrefab: {fileID: 3728693502479369528, guid: aca0eef12af46d54ead118af5bfe4bda, type: 3}
+      amount: 6
+      spawnDelay: 0.8
+    delayBeforeWaveStarts: 0.5
+    waveTimer: 15
+  - enemyGroups:
+    - enemyPrefab: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      amount: 5
+      spawnDelay: 1
+    - enemyPrefab: {fileID: 3728693502479369528, guid: aca0eef12af46d54ead118af5bfe4bda, type: 3}
+      amount: 4
+      spawnDelay: 0.5
+    delayBeforeWaveStarts: 2
+    waveTimer: 25
+  - enemyGroups:
+    - enemyPrefab: {fileID: 3728693502479369528, guid: 69528cb6af6374e468ec7b1650986f6c, type: 3}
+      amount: 4
+      spawnDelay: 2
+    - enemyPrefab: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      amount: 6
+      spawnDelay: 1
+    delayBeforeWaveStarts: 3
+    waveTimer: 30
+  - enemyGroups:
+    - enemyPrefab: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      amount: 8
+      spawnDelay: 0.5
+    - enemyPrefab: {fileID: 3728693502479369528, guid: 69528cb6af6374e468ec7b1650986f6c, type: 3}
+      amount: 5
+      spawnDelay: 1.5
+    - enemyPrefab: {fileID: 3728693502479369528, guid: aca0eef12af46d54ead118af5bfe4bda, type: 3}
+      amount: 6
+      spawnDelay: 1
+    delayBeforeWaveStarts: 2
+    waveTimer: 40
 --- !u!1 &304986912
 GameObject:
   m_ObjectHideFlags: 0
