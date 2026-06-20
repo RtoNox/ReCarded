@@ -6,6 +6,7 @@ public class WaveDisplayUI : MonoBehaviour
 {
     [Header("References")]
     public EnemySpawner enemySpawner;
+    public TowerPlacementManager towerPlacementManager;
 
     [Header("Wave Display")]
     public TMP_Text waveDisplayText;
@@ -16,11 +17,18 @@ public class WaveDisplayUI : MonoBehaviour
     public TMP_Text waveCallText;
     public TMP_Text waveTimerText;
 
+    private bool isPlacingTower = false;
+
     void OnEnable()
     {
         if (enemySpawner != null)
         {
             enemySpawner.OnWaveStateChanged += UpdateUI;
+        }
+
+        if (towerPlacementManager != null)
+        {
+            towerPlacementManager.OnPlacementStateChanged += HandlePlacementStateChanged;
         }
     }
 
@@ -30,6 +38,11 @@ public class WaveDisplayUI : MonoBehaviour
         {
             enemySpawner.OnWaveStateChanged -= UpdateUI;
         }
+
+        if (towerPlacementManager != null)
+        {
+            towerPlacementManager.OnPlacementStateChanged -= HandlePlacementStateChanged;
+        }
     }
 
     void Start()
@@ -37,6 +50,11 @@ public class WaveDisplayUI : MonoBehaviour
         if (waveCallButton != null)
         {
             waveCallButton.onClick.AddListener(CallWave);
+        }
+
+        if (towerPlacementManager != null)
+        {
+            isPlacingTower = towerPlacementManager.IsPlacingTower();
         }
 
         UpdateUI();
@@ -53,9 +71,18 @@ public class WaveDisplayUI : MonoBehaviour
         }
     }
 
+    void HandlePlacementStateChanged(bool placingTower)
+    {
+        isPlacingTower = placingTower;
+        UpdateUI();
+    }
+
     void CallWave()
     {
         if (enemySpawner == null)
+            return;
+
+        if (isPlacingTower)
             return;
 
         enemySpawner.CallNextWave();
@@ -97,6 +124,12 @@ public class WaveDisplayUI : MonoBehaviour
     {
         if (waveCallPanel == null || enemySpawner == null)
             return;
+
+        if (isPlacingTower)
+        {
+            waveCallPanel.SetActive(false);
+            return;
+        }
 
         bool canCallWave = enemySpawner.CanCallNextWave();
 

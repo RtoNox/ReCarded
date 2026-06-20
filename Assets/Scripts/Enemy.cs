@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Stats")]
     public int health = 10;
+    public int cashReward = 10;
 
     public Action<Enemy> OnEnemyDeath;
 
@@ -47,8 +48,39 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public int GetCurrentWaypoint()
+    {
+        return currentWaypoint;
+    }
+
+    public float GetPathProgress()
+    {
+        if (waypoints == null || waypoints.Length == 0)
+            return 0f;
+
+        if (currentWaypoint >= waypoints.Length)
+            return float.MaxValue;
+
+        Transform targetWaypoint = waypoints[currentWaypoint];
+
+        float distanceToWaypoint =
+            Vector2.Distance(transform.position, targetWaypoint.position);
+
+        return currentWaypoint + (1f / (distanceToWaypoint + 1f));
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
     void Die()
     {
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.AddCash(cashReward);
+        }
+
         RemoveEnemy();
         Destroy(gameObject);
     }
