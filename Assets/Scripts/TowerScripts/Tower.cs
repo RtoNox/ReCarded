@@ -1,22 +1,36 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public enum TargetingMode
 {
     First,
     Last,
-    Strong,
-    Weak,
+    Strongest,
+    Weakest,
     Closest
 }
 
 public class Tower : MonoBehaviour
 {
+    [Header("Basic Info")]
+    public string towerName = "Basic Tower";
+
+    [Header("UI Display")]
+    public Sprite towerIcon;
+    public List<Sprite> attachedCardIcons = new List<Sprite>();
+
     [Header("Tower Stats")]
     public int damage = 2;
     public float range = 3f;
     public float fireRate = 1f;
     public float projectileSpeed = 8f;
     public float projectileLifetime = 3f;
+
+    [Header("Economy")]
+    public int purchaseCost = 50;
+    [Range(0f, 1f)]
+    public float sellRefundPercent = 0.5f;
+    public int extraSellValue = 0;
 
     [Header("Shooting")]
     public GameObject projectilePrefab;
@@ -26,7 +40,28 @@ public class Tower : MonoBehaviour
     [Header("Targeting")]
     public TargetingMode targetingMode = TargetingMode.First;
 
+    [Header("Selection Visuals")]
+    public SpriteRenderer towerSpriteRenderer;
+    public Color normalColor = Color.white;
+    public Color selectedColor = Color.yellow;
+    public LineRenderer selectedRangeLine;
+    public int rangeCircleSegments = 80;
+    public float rangeLineWidth = 0.05f;
+
     private float fireCooldown = 0f;
+    private TowerPlacementManager placementManager;
+
+    void Awake()
+    {
+        if (towerSpriteRenderer == null)
+        {
+            towerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        SetupRangeLine();
+
+        SetSelected(false);
+    }
 
     void Update()
     {
@@ -40,6 +75,62 @@ public class Tower : MonoBehaviour
             {
                 Shoot(target);
                 fireCooldown = 1f / fireRate;
+            }
+        }
+    }
+
+    public void InitializeTower(TowerPlacementManager newPlacementManager, int newPurchaseCost)
+    {
+        placementManager = newPlacementManager;
+        purchaseCost = newPurchaseCost;
+    }
+
+    void SetupRangeLine()
+    {
+        if (selectedRangeLine == null)
+            return;
+
+        selectedRangeLine.useWorldSpace = false;
+        selectedRangeLine.loop = true;
+        selectedRangeLine.positionCount = rangeCircleSegments;
+        selectedRangeLine.startWidth = rangeLineWidth;
+        selectedRangeLine.endWidth = rangeLineWidth;
+
+        DrawRangeCircle();
+    }
+
+    void DrawRangeCircle()
+    {
+        if (selectedRangeLine == null)
+            return;
+
+        selectedRangeLine.positionCount = rangeCircleSegments;
+
+        for (int i = 0; i < rangeCircleSegments; i++)
+        {
+            float angle = ((float)i / rangeCircleSegments) * Mathf.PI * 2f;
+
+            float x = Mathf.Cos(angle) * range;
+            float y = Mathf.Sin(angle) * range;
+
+            selectedRangeLine.SetPosition(i, new Vector3(x, y, 0f));
+        }
+    }
+
+    public void SetSelected(bool selected)
+    {
+        if (towerSpriteRenderer != null)
+        {
+            towerSpriteRenderer.color = selected ? selectedColor : normalColor;
+        }
+
+        if (selectedRangeLine != null)
+        {
+            selectedRangeLine.gameObject.SetActive(selected);
+
+            if (selected)
+            {
+                DrawRangeCircle();
             }
         }
     }
@@ -102,10 +193,10 @@ public class Tower : MonoBehaviour
             case TargetingMode.Last:
                 return FindLastTarget(hits);
 
-            case TargetingMode.Strong:
+            case TargetingMode.Strongest:
                 return FindStrongestTarget(hits);
 
-            case TargetingMode.Weak:
+            case TargetingMode.Weakest:
                 return FindWeakestTarget(hits);
 
             case TargetingMode.Closest:
@@ -116,7 +207,6 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // Targeting mode methods
     Enemy FindFirstTarget(Collider2D[] hits)
     {
         Enemy bestTarget = null;
@@ -237,7 +327,6 @@ public class Tower : MonoBehaviour
         return bestTarget;
     }
 
-    // Targeting mode switching
     public void NextTargetingMode()
     {
         int modeCount =
@@ -259,6 +348,38 @@ public class Tower : MonoBehaviour
     public string GetTargetingModeName()
     {
         return targetingMode.ToString();
+    }
+
+    public virtual List<TowerStatDisplayData> GetDisplayStats()
+    {
+        List<TowerStatDisplayData> stats = new List<TowerStatDisplayData>();
+
+        stats.Add(new TowerStatDisplayData("Damage", damage.ToString()));
+        stats.Add(new TowerStatDisplayData("Range", range.ToString("0.0")));
+        stats.Add(new TowerStatDisplayData("Fire Rate", fireRate.ToString("0.0") + "s"));
+
+        return stats;
+    }
+
+    public virtual int GetSellValue()
+    {
+        int baseRefund = Mathf.RoundToInt(purchaseCost * sellRefundPercent);
+        return baseRefund + extraSellValue;
+    }
+
+    public virtual void Sell()
+    {
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.AddCash(GetSellValue());
+        }
+
+        if (placementManager != null)
+        {
+            placementManager.RemovePlacedTower();
+        }
+
+        Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()

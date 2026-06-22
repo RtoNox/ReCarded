@@ -176,7 +176,18 @@ public class TowerPlacementManager : MonoBehaviour
             return;
         }
 
-        Instantiate(basicTowerPrefab, worldPosition, Quaternion.identity);
+        GameObject towerObject = Instantiate(
+            basicTowerPrefab,
+            worldPosition,
+            Quaternion.identity
+        );
+
+        Tower tower = towerObject.GetComponent<Tower>();
+
+        if (tower != null)
+        {
+            tower.InitializeTower(this, basicTowerCost);
+        }
 
         placedTowerCount++;
 
@@ -247,11 +258,18 @@ public class TowerPlacementManager : MonoBehaviour
         {
             basicTowerButton.interactable = !isPlacingTower;
         }
+    }
 
-        if (waveCallPanel != null)
+    public void RemovePlacedTower()
+    {
+        placedTowerCount--;
+
+        if (placedTowerCount < 0)
         {
-            waveCallPanel.SetActive(!isPlacingTower);
+            placedTowerCount = 0;
         }
+
+        UpdateUI();
     }
 
     void UpdateUI()
