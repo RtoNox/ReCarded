@@ -353,6 +353,15 @@ public class Tower : MonoBehaviour
     public virtual List<TowerStatDisplayData> GetDisplayStats()
     {
         List<TowerStatDisplayData> stats = new List<TowerStatDisplayData>();
+        TowerHealth towerHealth = GetComponent<TowerHealth>();
+
+        if (towerHealth != null)
+        {
+            stats.Add(new TowerStatDisplayData(
+                "HP",
+                towerHealth.GetCurrentHealth() + " / " + towerHealth.GetMaxHealth()
+            ));
+        }
 
         stats.Add(new TowerStatDisplayData("Damage", damage.ToString()));
         stats.Add(new TowerStatDisplayData("Range", range.ToString("0.0")));
@@ -374,6 +383,16 @@ public class Tower : MonoBehaviour
             CurrencyManager.Instance.AddCash(GetSellValue());
         }
 
+        if (placementManager != null)
+        {
+            placementManager.RemovePlacedTower();
+        }
+
+        Destroy(gameObject);
+    }
+
+    public virtual void DestroyTower()
+    {
         if (placementManager != null)
         {
             placementManager.RemovePlacedTower();
