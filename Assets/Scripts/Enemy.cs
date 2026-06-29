@@ -8,13 +8,23 @@ public class Enemy : MonoBehaviour
     public float speed = 2f;
 
     [Header("Stats")]
+    public int maxHealth = 10;
     public int health = 10;
     public int cashReward = 10;
+
+    [Header("UI")]
+    public HealthBarUI healthBarUI;
 
     public Action<Enemy> OnEnemyDeath;
 
     private int currentWaypoint = 0;
     private bool hasBeenRemoved = false;
+
+    void Start()
+    {
+        health = maxHealth;
+        UpdateHealthBar();
+    }
 
     void Update()
     {
@@ -42,9 +52,24 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
+        if (health < 0)
+        {
+            health = 0;
+        }
+
+        UpdateHealthBar();
+
         if (health <= 0)
         {
             Die();
+        }
+    }
+
+    void UpdateHealthBar()
+    {
+        if (healthBarUI != null)
+        {
+            healthBarUI.SetHealth(health, maxHealth);
         }
     }
 
@@ -72,6 +97,11 @@ public class Enemy : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
     }
 
     void Die()
