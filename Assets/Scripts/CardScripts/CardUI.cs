@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.EventSystems;
 
 public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -8,12 +6,8 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [Header("Card Data")]
     public CardData cardData;
 
-    [Header("Card Visuals")]
-    public Image sleeveImage;
-    public Image iconImage;
-
-    public TMP_Text nameText;
-    public TMP_Text typeText;
+    [Header("Animated Art")]
+    public AnimatedCardArtUI animatedCardArt;
 
     private CardPreviewUI cardPreviewUI;
 
@@ -30,34 +24,28 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (cardData == null)
             return;
 
-        if (sleeveImage != null)
+        if (animatedCardArt != null)
         {
-            sleeveImage.sprite = cardData.cardSleeve;
-            sleeveImage.enabled = cardData.cardSleeve != null;
+            animatedCardArt.SetAnimation(
+                cardData.cardAnimationFrames,
+                cardData.animationFrameRate
+            );
         }
-
-        if (iconImage != null)
-        {
-            iconImage.sprite = cardData.cardIcon;
-            iconImage.enabled = cardData.cardIcon != null;
-        }
-
-        if (nameText != null)
-            nameText.text = cardData.cardName;
-
-        if (typeText != null)
-            typeText.text = cardData.cardType.ToString();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (cardPreviewUI != null)
+        {
             cardPreviewUI.ShowPreview(cardData);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (cardPreviewUI != null)
+        {
             cardPreviewUI.HidePreview();
+        }
     }
 }

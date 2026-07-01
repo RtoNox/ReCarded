@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: DamageBoost
+  m_EditorClassIdentifier: 
+  cardName: THAT'S A LOT OF DAMAGE
+  effectDescription: Adds +10 damage boost to any tower. (Can't be used on ADHD tower.)
+  cardType: 0
+  playType: 0
+  offensiveEffect: 1
+  sustainEffect: 0
+  modificationEffect: 0
+  cardAnimationFrames:
+  - {fileID: -538354566, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: -327880044, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: 164244844, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: 735653349, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: 1446156293, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: -2020189555, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: 1586947332, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: -602065061, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: -2077085530, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  - {fileID: 707272706, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
+  animationFrameRate: 10
+  damageBonus: 10
+  attackSpeedMultiplier: 1
+  instantDamage: 0
+  areaRadius: 2
+  poisonDamagePerTick: 0
+  poisonDuration: 5
+  poisonTickRate: 1
+  healAmount: 0
+  shieldAmount: 0
+  maxHealthBonus: 0
+  passiveRegenAmount: 0
+  sustainAreaRadius: 2.5
+  sustainDuration: 5
+  sustainTickRate: 1
+  sustainHealPerTick: 0
+  upgradedTowerPrefab: {fileID: 0}

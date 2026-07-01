@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,9 +93,245 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dad8356375d344fb04332336318ce7
+      internalID: -1341359545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd393422b70696d40995ec25b17212f1
+      internalID: -1292222673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942c16d455af121498e5d7c609af6867
+      internalID: -300359867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23784ae457b7c864db1f79fd59dc6b20
+      internalID: 69508067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2062
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5d9df6e08def440b5193cac1c41138
+      internalID: -648517753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc23bfd5396e64f4db123d6890fa6941
+      internalID: -1077017654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23159e0b4f16a624d848df63a0d74b67
+      internalID: 2021799781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433730f40af47e3428919cec535a33b6
+      internalID: -42917877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b361aa4fcbb7b46bab1753e2f6b469
+      internalID: -1206717884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPEED ACCELERATION-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4622
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7584ff1db7eb54cb6e39948e797071
+      internalID: -1151697780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +342,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SPEED ACCELERATION-Sheet_0: -1341359545
+      SPEED ACCELERATION-Sheet_1: -1292222673
+      SPEED ACCELERATION-Sheet_2: -300359867
+      SPEED ACCELERATION-Sheet_3: 69508067
+      SPEED ACCELERATION-Sheet_4: -648517753
+      SPEED ACCELERATION-Sheet_5: -1077017654
+      SPEED ACCELERATION-Sheet_6: 2021799781
+      SPEED ACCELERATION-Sheet_7: -42917877
+      SPEED ACCELERATION-Sheet_8: -1206717884
+      SPEED ACCELERATION-Sheet_9: -1151697780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,9 +93,245 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfec448989d17d45a21b80914078236
+      internalID: -777267748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828e1cc5a6a2c0f499004bf3cb965b6a
+      internalID: -1015695045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a032af1575d414b95860f5ed6626bd
+      internalID: 600781540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f61d5e1ef17a14a9a613014129f2ac
+      internalID: 1795498484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2062
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d96ba4014bed0c4dab46e2b365e2f2d
+      internalID: -1286945863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1b3a20ee5876a43ba6a71198f499b2
+      internalID: -1333181829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cb0de53ece5594d9dba17422db006f
+      internalID: 505667671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289aa0346342379438675aa4635130e5
+      internalID: -1822116219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ece05bf7751274b8429cd2c2edb2db
+      internalID: 879591947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATOMIC MUSHROOM-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4622
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3004cb00240557342af14f63c955987c
+      internalID: 1702999739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +342,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ATOMIC MUSHROOM-Sheet_0: -777267748
+      ATOMIC MUSHROOM-Sheet_1: -1015695045
+      ATOMIC MUSHROOM-Sheet_2: 600781540
+      ATOMIC MUSHROOM-Sheet_3: 1795498484
+      ATOMIC MUSHROOM-Sheet_4: -1286945863
+      ATOMIC MUSHROOM-Sheet_5: -1333181829
+      ATOMIC MUSHROOM-Sheet_6: 505667671
+      ATOMIC MUSHROOM-Sheet_7: -1822116219
+      ATOMIC MUSHROOM-Sheet_8: 879591947
+      ATOMIC MUSHROOM-Sheet_9: 1702999739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

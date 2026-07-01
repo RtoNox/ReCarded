@@ -7,14 +7,11 @@ public class CardPreviewUI : MonoBehaviour
     [Header("Preview Panel")]
     public GameObject previewPanel;
 
-    [Header("Card Display")]
-    public Image cardSleeveImage;
-    public Image iconImage;
+    [Header("Animated Card Preview")]
+    public AnimatedCardArtUI animatedCardArt;
 
-    public TMP_Text nameText;
-    public TMP_Text typeText;
-    public TMP_Text playTypeText;
-    public TMP_Text descriptionText;
+    [Header("Effect Description")]
+    public TMP_Text effectDescriptionText;
 
     private CanvasGroup canvasGroup;
 
@@ -22,12 +19,27 @@ public class CardPreviewUI : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        if (canvasGroup != null)
+        if (canvasGroup == null)
         {
-            canvasGroup.blocksRaycasts = false;
+            canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
 
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+
+        DisableRaycastsOnChildren();
+
         HidePreview();
+    }
+
+    void DisableRaycastsOnChildren()
+    {
+        Graphic[] graphics = GetComponentsInChildren<Graphic>(true);
+
+        foreach (Graphic graphic in graphics)
+        {
+            graphic.raycastTarget = false;
+        }
     }
 
     public void ShowPreview(CardData cardData)
@@ -36,36 +48,29 @@ public class CardPreviewUI : MonoBehaviour
             return;
 
         if (previewPanel != null)
+        {
             previewPanel.SetActive(true);
-
-        if (cardSleeveImage != null)
-        {
-            cardSleeveImage.sprite = cardData.cardSleeve;
-            cardSleeveImage.enabled = cardData.cardSleeve != null;
         }
 
-        if (iconImage != null)
+        if (animatedCardArt != null)
         {
-            iconImage.sprite = cardData.cardIcon;
-            iconImage.enabled = cardData.cardIcon != null;
+            animatedCardArt.SetAnimation(
+                cardData.cardAnimationFrames,
+                cardData.animationFrameRate
+            );
         }
 
-        if (nameText != null)
-            nameText.text = cardData.cardName;
-
-        if (typeText != null)
-            typeText.text = cardData.cardType.ToString();
-
-        if (playTypeText != null)
-            playTypeText.text = "Play: " + cardData.playType.ToString();
-
-        if (descriptionText != null)
-            descriptionText.text = cardData.description;
+        if (effectDescriptionText != null)
+        {
+            effectDescriptionText.text = cardData.effectDescription;
+        }
     }
 
     public void HidePreview()
     {
         if (previewPanel != null)
+        {
             previewPanel.SetActive(false);
+        }
     }
 }

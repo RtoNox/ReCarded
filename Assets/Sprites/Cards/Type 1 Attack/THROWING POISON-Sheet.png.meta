@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,9 +93,245 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995fe6b48ad4a9a43871baccfaefbb94
+      internalID: -1016679891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c296c774c8c4cff459d0986495c2fc37
+      internalID: -1627933448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca5dbaf0ca73944b93a01e6ea38b9f1
+      internalID: -1127515058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c2b6cf5ad53c2428404fb07511ab38
+      internalID: 1723517997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2062
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26357c841b2c88d4f98af419550c1aea
+      internalID: -1176249659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce571a15971834c479382e4785ed437c
+      internalID: -353477754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ebd420298c05d4392ec2edb0f2fd7b
+      internalID: -784740046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f5fb1fa758bfa43bd4be9758466ee3
+      internalID: 1506875331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf93d0a3ec152542a4e1afaa92c83d9
+      internalID: 1432950637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: THROWING POISON-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4622
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de28008c02a31b4fbb79339081bc25a
+      internalID: 368572945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +342,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      THROWING POISON-Sheet_0: -1016679891
+      THROWING POISON-Sheet_1: -1627933448
+      THROWING POISON-Sheet_2: -1127515058
+      THROWING POISON-Sheet_3: 1723517997
+      THROWING POISON-Sheet_4: -1176249659
+      THROWING POISON-Sheet_5: -353477754
+      THROWING POISON-Sheet_6: -784740046
+      THROWING POISON-Sheet_7: 1506875331
+      THROWING POISON-Sheet_8: 1432950637
+      THROWING POISON-Sheet_9: 368572945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

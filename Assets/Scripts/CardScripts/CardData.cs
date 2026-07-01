@@ -55,7 +55,7 @@ public class CardData : ScriptableObject
     public string cardName;
 
     [TextArea(3, 6)]
-    public string description;
+    public string effectDescription;
 
     [Header("Card Identity")]
     public CardType cardType;
@@ -70,9 +70,9 @@ public class CardData : ScriptableObject
     [Header("Modification Effect")]
     public ModificationCardEffect modificationEffect;
 
-    [Header("Visuals")]
-    public Sprite cardSleeve;
-    public Sprite cardIcon;
+    [Header("Card Animation")]
+    public Sprite[] cardAnimationFrames;
+    public float animationFrameRate = 10f;
 
     [Header("Tower Buff Values")]
     public int damageBonus;

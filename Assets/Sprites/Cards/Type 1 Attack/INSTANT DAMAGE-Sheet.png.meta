@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,9 +93,245 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9eee633f5dd4614e8bf72269f77b34f
+      internalID: -47831748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b479b91e6fdad2443bf1de7ed66f505c
+      internalID: 635086387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004ce4086ff80e349847146c5c8b4893
+      internalID: 620077006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a44e5329b4107d4bb7ad6c34884ba7f
+      internalID: 1313230397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2062
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d646bd1d67fc3c841830f15a5a9db69a
+      internalID: 1006338159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 38
+        width: 482
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884a1b53b83aca44db31bce5a43969fc
+      internalID: 786406840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3966dfe00e3ee16469a5591e25834416
+      internalID: -989752885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02a29488f2b7d048a87fe3e08866c1e
+      internalID: -1242104213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 38
+        width: 485
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5814440e49424b6458b1e8ff49c3afc7
+      internalID: -221164976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INSTANT DAMAGE-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4622
+        y: 38
+        width: 483
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c5c9f3a5fcfac4c86c9f4723401b71
+      internalID: 2079995955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +342,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      INSTANT DAMAGE-Sheet_0: -47831748
+      INSTANT DAMAGE-Sheet_1: 635086387
+      INSTANT DAMAGE-Sheet_2: 620077006
+      INSTANT DAMAGE-Sheet_3: 1313230397
+      INSTANT DAMAGE-Sheet_4: 1006338159
+      INSTANT DAMAGE-Sheet_5: 786406840
+      INSTANT DAMAGE-Sheet_6: -989752885
+      INSTANT DAMAGE-Sheet_7: -1242104213
+      INSTANT DAMAGE-Sheet_8: -221164976
+      INSTANT DAMAGE-Sheet_9: 2079995955
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
