@@ -1,7 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CardUI : MonoBehaviour,
+    IPointerEnterHandler,
+    IPointerExitHandler,
+    IBeginDragHandler,
+    IDragHandler,
+    IEndDragHandler
 {
     [Header("Card Data")]
     public CardData cardData;
@@ -10,13 +15,35 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public AnimatedCardArtUI animatedCardArt;
 
     private CardPreviewUI cardPreviewUI;
+    private CardPlayManager cardPlayManager;
 
-    public void Setup(CardData newCardData, CardPreviewUI previewUI)
+    private RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
+    private Transform originalParent;
+    private Vector2 originalAnchoredPosition;
+
+    public void Setup(
+        CardData newCardData,
+        CardPreviewUI previewUI,
+        CardPlayManager playManager
+    )
     {
         cardData = newCardData;
         cardPreviewUI = previewUI;
+        cardPlayManager = playManager;
 
         RefreshUI();
+    }
+
+    void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+
+        if (canvasGroup == null)
+        {
+            canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        }
     }
 
     void RefreshUI()
@@ -47,5 +74,47 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             cardPreviewUI.HidePreview();
         }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        originalParent = transform.parent;
+        originalAnchoredPosition = rectTransform.anchoredPosition;
+
+        if (cardPreviewUI != null)
+        {
+            cardPreviewUI.HidePreview();
+        }
+
+        canvasGroup.blocksRaycasts = false;
+        transform.SetAsLastSibling();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        rectTransform.position = eventData.position;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        canvasGroup.blocksRaycasts = true;
+
+        bool cardWasPlayed = false;
+
+        if (cardPlayManager != null)
+        {
+            cardWasPlayed = cardPlayManager.TryPlayCard(this, eventData.position);
+        }
+
+        if (!cardWasPlayed)
+        {
+            ReturnToHand();
+        }
+    }
+
+    public void ReturnToHand()
+    {
+        transform.SetParent(originalParent);
+        rectTransform.anchoredPosition = originalAnchoredPosition;
     }
 }

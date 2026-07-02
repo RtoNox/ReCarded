@@ -189,6 +189,13 @@ public class TowerPlacementManager : MonoBehaviour
             tower.InitializeTower(this, basicTowerCost);
         }
 
+        TowerCardTarget cardTarget = towerObject.GetComponent<TowerCardTarget>();
+
+        if (cardTarget != null)
+        {
+            cardTarget.Initialize(this, basicTowerCost, basicTowerPrefab);
+        }
+
         placedTowerCount++;
 
         SetPlacementState(false);

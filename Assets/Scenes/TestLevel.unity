@@ -389,6 +389,8 @@ GameObject:
   m_Component:
   - component: {fileID: 107321746}
   - component: {fileID: 107321747}
+  - component: {fileID: 107321749}
+  - component: {fileID: 107321748}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -426,8 +428,47 @@ MonoBehaviour:
   handContainer: {fileID: 695399866}
   cardPrefab: {fileID: 7730612314977375196, guid: a8760c256251caf49a5a7458f9db093e, type: 3}
   cardPreviewUI: {fileID: 128886860}
+  cardPlayManager: {fileID: 107321749}
   startingCards:
   - {fileID: 11400000, guid: 8fd970e68267bb54283cd0c816db3e31, type: 2}
+--- !u!114 &107321748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107321745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dda3e6e1983904418c07119b5f73b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  poisonFieldPrefab: {fileID: 0}
+  regenFieldPrefab: {fileID: 0}
+--- !u!114 &107321749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107321745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a4f1edee8729a4bbb1e31bc8137744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
+  cardHandUI: {fileID: 107321747}
+  cardEffectResolver: {fileID: 107321748}
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &128886856
 GameObject:
   m_ObjectHideFlags: 0

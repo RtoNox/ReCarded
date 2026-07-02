@@ -7,6 +7,7 @@ public class CardHandUI : MonoBehaviour
     public Transform handContainer;
     public CardUI cardPrefab;
     public CardPreviewUI cardPreviewUI;
+    public CardPlayManager cardPlayManager;
 
     [Header("Starting Cards")]
     public List<CardData> startingCards = new List<CardData>();
@@ -46,7 +47,12 @@ public class CardHandUI : MonoBehaviour
         }
 
         CardUI newCard = Instantiate(cardPrefab, handContainer);
-        newCard.Setup(cardData, cardPreviewUI);
+
+        newCard.Setup(
+            cardData,
+            cardPreviewUI,
+            cardPlayManager
+        );
 
         cardsInHand.Add(newCard);
     }
@@ -57,7 +63,9 @@ public class CardHandUI : MonoBehaviour
             return;
 
         if (cardsInHand.Contains(cardUI))
+        {
             cardsInHand.Remove(cardUI);
+        }
 
         Destroy(cardUI.gameObject);
     }
@@ -67,7 +75,9 @@ public class CardHandUI : MonoBehaviour
         for (int i = cardsInHand.Count - 1; i >= 0; i--)
         {
             if (cardsInHand[i] != null)
+            {
                 Destroy(cardsInHand[i].gameObject);
+            }
         }
 
         cardsInHand.Clear();

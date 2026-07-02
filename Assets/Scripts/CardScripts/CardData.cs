@@ -29,8 +29,8 @@ public enum OffensiveCardEffect
 public enum SustainCardEffect
 {
     None,
-    FlatAreaHeal,
-    RegenField,
+    SingleTargetHeal,
+    TimedRegen,
     Shield,
     MaxHPBoost,
     PassiveRegen,
@@ -43,7 +43,8 @@ public enum ModificationCardEffect
     ModifyToMinigunner,
     ModifyToSniper,
     ModifyToRocketLauncher,
-    ModifyToHealingTower,
+    ModifyToMedic,
+    ModifyToTrapper,
     CopyCard,
     RemoveAllAttachedCards
 }
@@ -87,18 +88,31 @@ public class CardData : ScriptableObject
     public float poisonDuration = 5f;
     public float poisonTickRate = 1f;
 
-    [Header("Sustain Values")]
-    public int healAmount;
-    public int shieldAmount;
-    public int maxHealthBonus;
-    public int passiveRegenAmount;
+    [Header("Sustain Percentage Values")]
+    [Tooltip("0.25 = heals 25% of the tower's max HP.")]
+    public float healPercent = 0.25f;
 
-    [Header("Area Sustain Values")]
-    public float sustainAreaRadius = 2.5f;
-    public float sustainDuration = 5f;
-    public float sustainTickRate = 1f;
-    public int sustainHealPerTick;
+    [Tooltip("0.05 = heals 5% of the tower's max HP per tick.")]
+    public float timedRegenPercentPerTick = 0.05f;
+
+    [Tooltip("How long the timed regen lasts.")]
+    public float timedRegenDuration = 5f;
+
+    [Tooltip("How often timed regen heals.")]
+    public float timedRegenTickRate = 1f;
+
+    [Tooltip("0.001 = heals 0.1% of the tower's max HP per tick permanently.")]
+    public float passiveRegenPercentPerTick = 0.001f;
+
+    [Tooltip("How often passive regen heals.")]
+    public float passiveRegenTickRate = 1f;
+
+    [Tooltip("0.25 = shield equal to 25% of the tower's max HP.")]
+    public float shieldPercent = 0.25f;
+
+    [Tooltip("0.25 = increases max HP by 25%.")]
+    public float maxHealthBonusPercent = 0.25f;
 
     [Header("Upgrade Prefab")]
-    public GameObject upgradedTowerPrefab;
+    public GameObject modifiedTowerPrefab;
 }

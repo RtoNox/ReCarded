@@ -11,7 +11,7 @@ public class TowerHealth : MonoBehaviour
     public int shieldAmount = 0;
 
     [Header("Passive Regen")]
-    public int passiveRegenPerTick = 0;
+    public float passiveRegenPercentPerTick = 0f;
     public float passiveRegenTickRate = 1f;
 
     [Header("UI")]
@@ -30,7 +30,7 @@ public class TowerHealth : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthBar();
 
-        if (passiveRegenPerTick > 0)
+        if (passiveRegenPercentPerTick > 0f)
         {
             StartPassiveRegen();
         }
@@ -64,7 +64,7 @@ public class TowerHealth : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
+    public void HealFlat(int amount)
     {
         if (amount <= 0)
             return;
@@ -75,13 +75,22 @@ public class TowerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
+    public void HealPercent(float percent)
+    {
+        if (percent <= 0f)
+            return;
+
+        int healAmount = Mathf.CeilToInt(maxHealth * percent);
+        HealFlat(healAmount);
+    }
+
     public void HealToFull()
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
 
-    public void AddShield(int amount)
+    public void AddShieldFlat(int amount)
     {
         if (amount <= 0)
             return;
@@ -90,7 +99,16 @@ public class TowerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void IncreaseMaxHealth(int amount, bool alsoHealByAmount = true)
+    public void AddShieldPercent(float percent)
+    {
+        if (percent <= 0f)
+            return;
+
+        int shieldToAdd = Mathf.CeilToInt(maxHealth * percent);
+        AddShieldFlat(shieldToAdd);
+    }
+
+    public void IncreaseMaxHealthFlat(int amount, bool alsoHealByAmount = true)
     {
         if (amount <= 0)
             return;
@@ -107,17 +125,45 @@ public class TowerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void AddPassiveRegen(int amount)
+    public void IncreaseMaxHealthPercent(float percent, bool alsoHealByAmount = true)
     {
-        if (amount <= 0)
+        if (percent <= 0f)
             return;
 
-        passiveRegenPerTick += amount;
+        int bonusHealth = Mathf.CeilToInt(maxHealth * percent);
+        IncreaseMaxHealthFlat(bonusHealth, alsoHealByAmount);
+    }
+
+    public void AddPassiveRegenPercent(float percentPerTick, float tickRate)
+    {
+        if (percentPerTick <= 0f)
+            return;
+
+        passiveRegenPercentPerTick += percentPerTick;
+
+        if (tickRate > 0f)
+        {
+            passiveRegenTickRate = tickRate;
+        }
 
         if (passiveRegenCoroutine == null)
         {
             StartPassiveRegen();
         }
+    }
+
+    public void StartTimedRegenPercent(float percentPerTick, float duration, float tickRate)
+    {
+        if (percentPerTick <= 0f)
+            return;
+
+        if (duration <= 0f)
+            return;
+
+        if (tickRate <= 0f)
+            tickRate = 1f;
+
+        StartCoroutine(TimedRegenRoutine(percentPerTick, duration, tickRate));
     }
 
     void StartPassiveRegen()
@@ -136,10 +182,24 @@ public class TowerHealth : MonoBehaviour
         {
             yield return new WaitForSeconds(passiveRegenTickRate);
 
-            if (passiveRegenPerTick > 0)
+            if (passiveRegenPercentPerTick > 0f)
             {
-                Heal(passiveRegenPerTick);
+                HealPercent(passiveRegenPercentPerTick);
             }
+        }
+    }
+
+    IEnumerator TimedRegenRoutine(float percentPerTick, float duration, float tickRate)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            HealPercent(percentPerTick);
+
+            timer += tickRate;
+
+            yield return new WaitForSeconds(tickRate);
         }
     }
 
@@ -155,14 +215,15 @@ public class TowerHealth : MonoBehaviour
     {
         Debug.Log(name + " was destroyed!");
 
-        if (tower != null)
+        TowerCardTarget cardTarget = GetComponent<TowerCardTarget>();
+
+        if (cardTarget != null)
         {
-            tower.DestroyTower();
+            cardTarget.DestroyTower();
+            return;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        Destroy(gameObject);
     }
 
     public int GetCurrentHealth()
@@ -180,9 +241,9 @@ public class TowerHealth : MonoBehaviour
         return shieldAmount;
     }
 
-    public int GetPassiveRegenPerTick()
+    public float GetPassiveRegenPercentPerTick()
     {
-        return passiveRegenPerTick;
+        return passiveRegenPercentPerTick;
     }
 
     public bool IsDamaged()

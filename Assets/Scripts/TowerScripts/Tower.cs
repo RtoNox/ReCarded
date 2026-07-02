@@ -391,16 +391,6 @@ public class Tower : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void DestroyTower()
-    {
-        if (placementManager != null)
-        {
-            placementManager.RemovePlacedTower();
-        }
-
-        Destroy(gameObject);
-    }
-
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, range);
