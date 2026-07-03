@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: ShotgunnerUpgrade
+  m_EditorClassIdentifier: 
+  cardName: Ubercharge
+  effectDescription: Upgrades a tower into a bulky high damage close range tower.
+  cardType: 2
+  playType: 0
+  shopPrice: 100
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 1
+  offensiveEffect: 0
+  sustainEffect: 0
+  modificationEffect: 2
+  cardAnimationFrames:
+  - {fileID: 1725627027, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: -2143755471, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: -1196460565, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: 723750639, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: 190735158, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: 245650712, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: -1050875323, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: 707701085, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: 2119395090, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  - {fileID: 1652680904, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
+  animationFrameRate: 10
+  damageBonus: 10
+  attackSpeedMultiplier: 1
+  canStack: 0
+  stackKey: Upgrade
+  instantDamage: 10
+  areaRadius: 2
+  poisonDamagePerTick: 0
+  poisonDuration: 5
+  poisonTickRate: 1
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 1804478286899456452, guid: 12ed5d7f9f9b7c445b61da0ac831cf51, type: 3}

@@ -279,6 +279,26 @@ public class TowerPlacementManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void IncreaseTowerLimit(int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        towerLimit += amount;
+        UpdateUI();
+    }
+
+    public void SetTowerLimit(int newTowerLimit)
+    {
+        towerLimit = Mathf.Max(0, newTowerLimit);
+        UpdateUI();
+    }
+
+    public void RefreshTowerLimitUI()
+    {
+        UpdateUI();
+    }
+
     void UpdateUI()
     {
         if (towerLimitText != null)

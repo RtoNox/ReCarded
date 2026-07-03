@@ -16,6 +16,10 @@ MonoBehaviour:
   effectDescription: Adds +10 damage boost to any tower. (Can't be used on ADHD tower.)
   cardType: 0
   playType: 0
+  shopPrice: 80
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 1
   offensiveEffect: 1
   sustainEffect: 0
   modificationEffect: 0
@@ -34,6 +38,7 @@ MonoBehaviour:
   damageBonus: 10
   attackSpeedMultiplier: 1
   canStack: 0
+  stackKey: 
   instantDamage: 0
   areaRadius: 2
   poisonDamagePerTick: 0

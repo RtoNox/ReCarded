@@ -41,6 +41,7 @@ public enum ModificationCardEffect
 {
     None,
     ModifyToMinigunner,
+    ModifyToShotgunner,
     ModifyToSniper,
     ModifyToRocketLauncher,
     ModifyToMedic,
@@ -61,6 +62,20 @@ public class CardData : ScriptableObject
     [Header("Card Identity")]
     public CardType cardType;
     public CardPlayType playType;
+
+    [Header("Shop Values")]
+    [Tooltip("The guaranteed-buy price in the specific card shop.")]
+    public int shopPrice = 100;
+
+    [Tooltip("If false, this card will not appear in the specific card shop list.")]
+    public bool canAppearInSpecificShop = true;
+
+    [Tooltip("If false, this card cannot be rolled by the gacha.")]
+    public bool canAppearInGacha = true;
+
+    [Tooltip("Weighted gacha chance. Higher weight = more common. 0 = never rolls.")]
+    [Min(0f)]
+    public float gachaWeight = 1f;
 
     [Header("Offensive Effect")]
     public OffensiveCardEffect offensiveEffect;

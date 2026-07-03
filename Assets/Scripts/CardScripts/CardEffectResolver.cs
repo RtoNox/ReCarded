@@ -71,6 +71,7 @@ public class CardEffectResolver : MonoBehaviour
         switch (cardData.modificationEffect)
         {
             case ModificationCardEffect.ModifyToMinigunner:
+            case ModificationCardEffect.ModifyToShotgunner:
             case ModificationCardEffect.ModifyToSniper:
             case ModificationCardEffect.ModifyToRocketLauncher:
             case ModificationCardEffect.ModifyToMedic:
@@ -245,6 +246,7 @@ public class CardEffectResolver : MonoBehaviour
         switch (cardData.modificationEffect)
         {
             case ModificationCardEffect.ModifyToMinigunner:
+            case ModificationCardEffect.ModifyToShotgunner:
             case ModificationCardEffect.ModifyToSniper:
             case ModificationCardEffect.ModifyToRocketLauncher:
             case ModificationCardEffect.ModifyToMedic:
