@@ -26,6 +26,10 @@ public class Tower : MonoBehaviour
     public float projectileSpeed = 8f;
     public float projectileLifetime = 3f;
 
+    [Header("AoE Stats")]
+    [Tooltip("For the Rocketeer Tower")]
+    public float explosionRadius = 1.5f;
+
     [Header("Economy")]
     public int purchaseCost = 50;
     [Range(0f, 1f)]
@@ -74,7 +78,7 @@ public class Tower : MonoBehaviour
             if (target != null)
             {
                 Shoot(target);
-                fireCooldown = 1f / fireRate;
+                fireCooldown = fireRate;
             }
         }
     }
@@ -171,6 +175,13 @@ public class Tower : MonoBehaviour
             projectileSpeed,
             projectileLifetime
         );
+
+        RocketProjectile rocketProjectile = projectileObject.GetComponent<RocketProjectile>();
+
+        if (rocketProjectile != null)
+        {
+            rocketProjectile.SetExplosionRadius(explosionRadius);
+        }
     }
 
     Enemy FindTarget()

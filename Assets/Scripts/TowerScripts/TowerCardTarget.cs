@@ -12,6 +12,23 @@ public class TowerCardTarget : MonoBehaviour
     public List<CardData> attachedCards = new List<CardData>();
     public List<Sprite> attachedCardIcons = new List<Sprite>();
 
+    [Header("Card Target Highlight")]
+    public SpriteRenderer[] spriteRenderers;
+    public Color validCardTargetColor = Color.yellow;
+
+    private Color[] originalColors;
+    private bool hasStoredOriginalColors = false;
+
+    void Awake()
+    {
+        if (spriteRenderers == null || spriteRenderers.Length == 0)
+        {
+            spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        }
+
+        StoreOriginalColors();
+    }
+
     public void Initialize(
         TowerPlacementManager newPlacementManager,
         int newPurchaseCost,
@@ -29,6 +46,90 @@ public class TowerCardTarget : MonoBehaviour
             tower.InitializeTower(newPlacementManager, newPurchaseCost);
             tower.attachedCardIcons = attachedCardIcons;
         }
+    }
+
+    void StoreOriginalColors()
+    {
+        if (spriteRenderers == null)
+            return;
+
+        originalColors = new Color[spriteRenderers.Length];
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            if (spriteRenderers[i] != null)
+            {
+                originalColors[i] = spriteRenderers[i].color;
+            }
+        }
+
+        hasStoredOriginalColors = true;
+    }
+
+    public void SetCardTargetHighlight(bool highlighted)
+    {
+        if (spriteRenderers == null)
+            return;
+
+        if (!hasStoredOriginalColors)
+        {
+            StoreOriginalColors();
+        }
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            if (spriteRenderers[i] == null)
+                continue;
+
+            if (highlighted)
+            {
+                spriteRenderers[i].color = validCardTargetColor;
+            }
+            else
+            {
+                if (originalColors != null && i < originalColors.Length)
+                {
+                    spriteRenderers[i].color = originalColors[i];
+                }
+            }
+        }
+    }
+
+    public bool CanAttachCard(CardData cardData)
+    {
+        if (cardData == null)
+            return false;
+
+        if (cardData.canStack)
+            return true;
+
+        string newCardStackKey = GetStackKey(cardData);
+
+        foreach (CardData attachedCard in attachedCards)
+        {
+            if (attachedCard == null)
+                continue;
+
+            string attachedStackKey = GetStackKey(attachedCard);
+
+            if (attachedStackKey == newCardStackKey)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    string GetStackKey(CardData cardData)
+    {
+        if (cardData == null)
+            return "";
+
+        if (!string.IsNullOrEmpty(cardData.stackKey))
+            return cardData.stackKey;
+
+        return cardData.cardName;
     }
 
     public void AttachCard(CardData cardData)
@@ -139,7 +240,7 @@ public class TowerCardTarget : MonoBehaviour
         return newCardTarget;
     }
 
-    public virtual void DestroyTower()
+    public void DestroyTower()
     {
         if (placementManager != null)
         {

@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerName: Basic Tower
-  towerIcon: {fileID: -2413806693520163455, guid: 3a82cf1616eeafb4cbe48cf8f017cac1, type: 3}
+  towerIcon: {fileID: -930234105, guid: 4b02e94e104ae0b42a3237a3600915b2, type: 3}
   attachedCardIcons: []
   damage: 2
   range: 3
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b21acec43cb51442b8dde0fc43aaa95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   shieldAmount: 0
   passiveRegenPercentPerTick: 0
   passiveRegenTickRate: 1
@@ -330,6 +330,8 @@ MonoBehaviour:
   basicTowerPrefab: {fileID: 4223586695003443295}
   attachedCards: []
   attachedCardIcons: []
+  spriteRenderers: []
+  validCardTargetColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1001 &4543533818973102412
 PrefabInstance:
   m_ObjectHideFlags: 0

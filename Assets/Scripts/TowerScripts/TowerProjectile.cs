@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class TowerProjectile : MonoBehaviour
 {
-    private Enemy target;
-    private int damage;
-    private float speed;
-    private float lifetime;
+    protected Enemy target;
+    protected int damage;
+    protected float speed;
+    protected float lifetime;
 
-    private bool initialized = false;
+    protected bool initialized = false;
 
-    public void Initialize(Enemy newTarget, int newDamage, float newSpeed, float newLifetime)
+    public virtual void Initialize(Enemy newTarget, int newDamage, float newSpeed, float newLifetime)
     {
         target = newTarget;
         damage = newDamage;
@@ -21,7 +21,7 @@ public class TowerProjectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (!initialized)
             return;
@@ -35,7 +35,7 @@ public class TowerProjectile : MonoBehaviour
         MoveTowardsTarget();
     }
 
-    void MoveTowardsTarget()
+    protected virtual void MoveTowardsTarget()
     {
         Vector3 targetPosition = target.transform.position;
 
@@ -61,7 +61,7 @@ public class TowerProjectile : MonoBehaviour
         }
     }
 
-    void HitTarget()
+    protected virtual void HitTarget()
     {
         if (target != null)
         {

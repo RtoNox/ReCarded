@@ -6,7 +6,14 @@ public class CardPlayManager : MonoBehaviour
     public Camera mainCamera;
     public CardHandUI cardHandUI;
     public CardEffectResolver cardEffectResolver;
+
+    [Header("Target Layers")]
     public LayerMask towerLayer;
+
+    [Header("Drag Preview")]
+    public CardAreaPreview cardAreaPreview;
+
+    private CardUI currentlyDraggedCard;
 
     void Awake()
     {
@@ -14,6 +21,32 @@ public class CardPlayManager : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
+    }
+
+    public void BeginCardDrag(CardUI cardUI, Vector2 screenPosition)
+    {
+        currentlyDraggedCard = cardUI;
+
+        if (cardUI == null || cardUI.cardData == null)
+            return;
+
+        ShowDragPreview(cardUI.cardData, screenPosition);
+    }
+
+    public void UpdateCardDrag(CardUI cardUI, Vector2 screenPosition)
+    {
+        if (cardUI == null || cardUI.cardData == null)
+            return;
+
+        UpdateDragPreview(cardUI.cardData, screenPosition);
+    }
+
+    public void EndCardDrag()
+    {
+        currentlyDraggedCard = null;
+
+        HideAreaPreview();
+        ClearTowerHighlights();
     }
 
     public bool TryPlayCard(CardUI cardUI, Vector2 screenPosition)
@@ -65,6 +98,98 @@ public class CardPlayManager : MonoBehaviour
         }
 
         return success;
+    }
+
+    void ShowDragPreview(CardData cardData, Vector2 screenPosition)
+    {
+        if (cardData.playType == CardPlayType.TargetArea)
+        {
+            ShowAreaPreview(cardData, screenPosition);
+            return;
+        }
+
+        if (cardData.playType == CardPlayType.TargetTower)
+        {
+            HighlightValidTowers(cardData);
+            return;
+        }
+
+        HideAreaPreview();
+        ClearTowerHighlights();
+    }
+
+    void UpdateDragPreview(CardData cardData, Vector2 screenPosition)
+    {
+        if (cardData.playType == CardPlayType.TargetArea)
+        {
+            ShowAreaPreview(cardData, screenPosition);
+        }
+    }
+
+    void ShowAreaPreview(CardData cardData, Vector2 screenPosition)
+    {
+        if (cardAreaPreview == null)
+            return;
+
+        if (cardData.cardType != CardType.Offensive)
+        {
+            HideAreaPreview();
+            return;
+        }
+
+        if (cardData.offensiveEffect != OffensiveCardEffect.InstantAreaDamage &&
+            cardData.offensiveEffect != OffensiveCardEffect.PoisonAreaDamage)
+        {
+            HideAreaPreview();
+            return;
+        }
+
+        Vector3 worldPosition = GetWorldPosition(screenPosition);
+
+        cardAreaPreview.SetWorldPosition(worldPosition);
+        cardAreaPreview.Show(cardData.areaRadius);
+    }
+
+    void HideAreaPreview()
+    {
+        if (cardAreaPreview != null)
+        {
+            cardAreaPreview.Hide();
+        }
+    }
+
+    void HighlightValidTowers(CardData cardData)
+    {
+        ClearTowerHighlights();
+
+        if (cardEffectResolver == null)
+            return;
+
+        TowerCardTarget[] towers = FindObjectsOfType<TowerCardTarget>();
+
+        foreach (TowerCardTarget tower in towers)
+        {
+            if (tower == null)
+                continue;
+
+            bool isValidTarget =
+                cardEffectResolver.CanCardBePlayedOnTower(cardData, tower);
+
+            tower.SetCardTargetHighlight(isValidTarget);
+        }
+    }
+
+    void ClearTowerHighlights()
+    {
+        TowerCardTarget[] towers = FindObjectsOfType<TowerCardTarget>();
+
+        foreach (TowerCardTarget tower in towers)
+        {
+            if (tower != null)
+            {
+                tower.SetCardTargetHighlight(false);
+            }
+        }
     }
 
     bool TryPlayOnTower(CardData cardData, Vector3 worldPosition)

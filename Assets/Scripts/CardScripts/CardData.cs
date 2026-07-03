@@ -79,6 +79,13 @@ public class CardData : ScriptableObject
     public int damageBonus;
     public float attackSpeedMultiplier = 1f;
 
+    [Header("Stacking Rules")]
+    [Tooltip("If true, this card can be attached multiple times to the same tower.")]
+    public bool canStack = false;
+
+    [Tooltip("Cards with the same stack key count as the same attached effect. Leave empty to use the card name.")]
+    public string stackKey;
+
     [Header("Spell Values")]
     public int instantDamage;
     public float areaRadius = 2f;

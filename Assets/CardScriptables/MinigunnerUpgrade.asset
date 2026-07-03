@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: MinigunnerUpgrade
+  m_EditorClassIdentifier: 
+  cardName: ADHD BUILD
+  effectDescription: Upgrades a tower into a fast-firing minigunner tower with an
+    extremely low attention span.
+  cardType: 2
+  playType: 0
+  offensiveEffect: 0
+  sustainEffect: 0
+  modificationEffect: 1
+  cardAnimationFrames:
+  - {fileID: -336079274, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: 2130717474, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: 252348934, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: -1173923148, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: -1909221950, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: -650448121, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: 1546361517, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: -890453053, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: -2094040455, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  - {fileID: 1262741533, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
+  animationFrameRate: 10
+  damageBonus: 10
+  attackSpeedMultiplier: 1
+  canStack: 0
+  stackKey: Upgrade
+  instantDamage: 10
+  areaRadius: 2
+  poisonDamagePerTick: 0
+  poisonDuration: 5
+  poisonTickRate: 1
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 1804478286899456452, guid: 867e1dd342edc2d47b3bd1507ffc4739, type: 3}

@@ -88,11 +88,21 @@ public class CardUI : MonoBehaviour,
 
         canvasGroup.blocksRaycasts = false;
         transform.SetAsLastSibling();
+
+        if (cardPlayManager != null)
+        {
+            cardPlayManager.BeginCardDrag(this, eventData.position);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.position = eventData.position;
+
+        if (cardPlayManager != null)
+        {
+            cardPlayManager.UpdateCardDrag(this, eventData.position);
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -104,6 +114,7 @@ public class CardUI : MonoBehaviour,
         if (cardPlayManager != null)
         {
             cardWasPlayed = cardPlayManager.TryPlayCard(this, eventData.position);
+            cardPlayManager.EndCardDrag();
         }
 
         if (!cardWasPlayed)

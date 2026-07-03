@@ -33,17 +33,18 @@ MonoBehaviour:
   animationFrameRate: 10
   damageBonus: 10
   attackSpeedMultiplier: 1
+  canStack: 0
   instantDamage: 0
   areaRadius: 2
   poisonDamagePerTick: 0
   poisonDuration: 5
   poisonTickRate: 1
-  healAmount: 0
-  shieldAmount: 0
-  maxHealthBonus: 0
-  passiveRegenAmount: 0
-  sustainAreaRadius: 2.5
-  sustainDuration: 5
-  sustainTickRate: 1
-  sustainHealPerTick: 0
-  upgradedTowerPrefab: {fileID: 0}
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 0}

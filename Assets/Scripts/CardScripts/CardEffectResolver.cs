@@ -9,10 +9,92 @@ public class CardEffectResolver : MonoBehaviour
     [Header("Area Effect Prefabs")]
     public GameObject poisonFieldPrefab;
 
+    public bool CanCardBePlayedOnTower(CardData cardData, TowerCardTarget towerCardTarget)
+    {
+        if (cardData == null || towerCardTarget == null)
+            return false;
+
+        switch (cardData.cardType)
+        {
+            case CardType.Offensive:
+                return CanOffensiveCardBePlayedOnTower(cardData, towerCardTarget);
+
+            case CardType.Sustain:
+                return CanSustainCardBePlayedOnTower(cardData, towerCardTarget);
+
+            case CardType.Modification:
+                return CanModificationCardBePlayedOnTower(cardData, towerCardTarget);
+        }
+
+        return false;
+    }
+
+    bool CanOffensiveCardBePlayedOnTower(CardData cardData, TowerCardTarget towerCardTarget)
+    {
+        Tower tower = towerCardTarget.GetComponent<Tower>();
+
+        if (tower == null)
+            return false;
+
+        switch (cardData.offensiveEffect)
+        {
+            case OffensiveCardEffect.DamageBoost:
+            case OffensiveCardEffect.AttackSpeedBoost:
+                return towerCardTarget.CanAttachCard(cardData);
+        }
+
+        return false;
+    }
+
+    bool CanSustainCardBePlayedOnTower(CardData cardData, TowerCardTarget towerCardTarget)
+    {
+        TowerHealth towerHealth = towerCardTarget.GetComponent<TowerHealth>();
+
+        if (towerHealth == null)
+            return false;
+
+        switch (cardData.sustainEffect)
+        {
+            case SustainCardEffect.SingleTargetHeal:
+            case SustainCardEffect.TimedRegen:
+            case SustainCardEffect.Shield:
+            case SustainCardEffect.MaxHPBoost:
+            case SustainCardEffect.PassiveRegen:
+                return towerCardTarget.CanAttachCard(cardData);
+        }
+
+        return false;
+    }
+
+    bool CanModificationCardBePlayedOnTower(CardData cardData, TowerCardTarget towerCardTarget)
+    {
+        switch (cardData.modificationEffect)
+        {
+            case ModificationCardEffect.ModifyToMinigunner:
+            case ModificationCardEffect.ModifyToSniper:
+            case ModificationCardEffect.ModifyToRocketLauncher:
+            case ModificationCardEffect.ModifyToMedic:
+            case ModificationCardEffect.ModifyToTrapper:
+                return cardData.modifiedTowerPrefab != null &&
+                       towerCardTarget.CanAttachCard(cardData);
+
+            case ModificationCardEffect.RemoveAllAttachedCards:
+                return towerCardTarget.attachedCards.Count > 0;
+        }
+
+        return false;
+    }
+
     public bool ApplyCardToTower(CardData cardData, TowerCardTarget towerCardTarget)
     {
         if (cardData == null || towerCardTarget == null)
             return false;
+
+        if (!CanCardBePlayedOnTower(cardData, towerCardTarget))
+        {
+            Debug.Log("Card cannot be played on this tower.");
+            return false;
+        }
 
         switch (cardData.cardType)
         {
