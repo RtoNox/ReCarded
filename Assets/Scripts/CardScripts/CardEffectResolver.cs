@@ -135,6 +135,7 @@ public class CardEffectResolver : MonoBehaviour
             if (cardData.offensiveEffect == OffensiveCardEffect.KillAllEnemiesOnScreen)
             {
                 KillAllEnemiesOnScreen();
+                ScreenFlasher.Instance.FlashScreen(Color.red, 2f);
                 return true;
             }
         }

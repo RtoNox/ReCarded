@@ -638,7 +638,8 @@ MonoBehaviour:
   cardPrefab: {fileID: 7730612314977375196, guid: a8760c256251caf49a5a7458f9db093e, type: 3}
   cardPreviewUI: {fileID: 128886860}
   cardPlayManager: {fileID: 107321749}
-  startingCards: []
+  startingCards:
+  - {fileID: 11400000, guid: 7dc0170a1bb831f408914057329dd13e, type: 2}
 --- !u!114 &107321748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +674,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   cardHandUI: {fileID: 107321747}
   cardEffectResolver: {fileID: 107321748}
+  cardSound: {fileID: 8300000, guid: 06f72d78756114e4e914f2734bba6d80, type: 3}
   towerLayer:
     serializedVersion: 2
     m_Bits: 128

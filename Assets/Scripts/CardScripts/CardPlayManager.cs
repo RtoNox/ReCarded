@@ -6,6 +6,7 @@ public class CardPlayManager : MonoBehaviour
     public Camera mainCamera;
     public CardHandUI cardHandUI;
     public CardEffectResolver cardEffectResolver;
+    public AudioClip cardSound;
 
     [Header("Target Layers")]
     public LayerMask towerLayer;
@@ -96,6 +97,8 @@ public class CardPlayManager : MonoBehaviour
                 Destroy(cardUI.gameObject);
             }
         }
+
+        AudioManager.Instance.PlaySound(cardSound);
 
         return success;
     }
