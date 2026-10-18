@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: RemoveAttachments
+  m_EditorClassIdentifier: 
+  cardName: Rick Roll
+  effectDescription: You know the rules and so do I, say goodbye (to your attached
+    cards)!
+  cardType: 2
+  playType: 0
+  shopPrice: 20
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 2
+  offensiveEffect: 0
+  sustainEffect: 0
+  modificationEffect: 8
+  cardAnimationFrames:
+  - {fileID: 1848670200, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: -788060576, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: -1224657431, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: 2001565890, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: 1195625302, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: -915678668, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: 1557709444, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: 917235834, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: -1517023881, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  - {fileID: -223799272, guid: 4e9569e4d2117944da7d258c186fa0f7, type: 3}
+  animationFrameRate: 10
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  canStack: 0
+  stackKey: 
+  instantDamage: 0
+  areaRadius: 2
+  poisonDamagePerTick: 0
+  poisonDuration: 5
+  poisonTickRate: 1
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 4223586695003443295, guid: 061be58a1cc047344b12b650509a74d0, type: 3}

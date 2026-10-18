@@ -14,7 +14,17 @@ public class PathPlacementHighlighter : MonoBehaviour
     {
         if (pathHighlightParent != null)
         {
-            pathHighlightParent.SetActive(true);
+            for (int i = 0; i < pathHighlightParent.transform.childCount; i++)
+            {
+                Transform child = pathHighlightParent.transform.GetChild(i);
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    Color color = sr.color;
+                    color.a = 0.5f;
+                    sr.color = color;
+                }
+            }
         }
     }
 
@@ -22,7 +32,17 @@ public class PathPlacementHighlighter : MonoBehaviour
     {
         if (pathHighlightParent != null)
         {
-            pathHighlightParent.SetActive(false);
+            for (int i = 0; i < pathHighlightParent.transform.childCount; i++)
+            {
+                Transform child = pathHighlightParent.transform.GetChild(i);
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    Color color = sr.color;
+                    color.a = 0f;
+                    sr.color = color;
+                }
+            }
         }
     }
 }

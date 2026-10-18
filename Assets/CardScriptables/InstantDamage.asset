@@ -16,10 +16,10 @@ MonoBehaviour:
   effectDescription: Deals 10 damage to all enemies in a small area.
   cardType: 0
   playType: 2
-  shopPrice: 50
+  shopPrice: 30
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
-  gachaWeight: 1
+  gachaWeight: 12
   offensiveEffect: 3
   sustainEffect: 0
   modificationEffect: 0
@@ -35,12 +35,12 @@ MonoBehaviour:
   - {fileID: -221164976, guid: e79c4f1588531ee48abe9223ab3b99dc, type: 3}
   - {fileID: 2079995955, guid: e79c4f1588531ee48abe9223ab3b99dc, type: 3}
   animationFrameRate: 10
-  damageBonus: 10
+  damageMultiplier: 1
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: 
   instantDamage: 10
-  areaRadius: 2
+  areaRadius: 2.5
   poisonDamagePerTick: 0
   poisonDuration: 5
   poisonTickRate: 1

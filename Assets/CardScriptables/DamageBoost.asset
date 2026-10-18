@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DamageBoost
   m_EditorClassIdentifier: 
   cardName: THAT'S A LOT OF DAMAGE
-  effectDescription: Adds +10 damage boost to any tower. (Can't be used on ADHD tower.)
+  effectDescription: Gives a 50% damage boost to any tower.
   cardType: 0
   playType: 0
-  shopPrice: 80
+  shopPrice: 40
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
-  gachaWeight: 1
+  gachaWeight: 9
   offensiveEffect: 1
   sustainEffect: 0
   modificationEffect: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
   - {fileID: -2077085530, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
   - {fileID: 707272706, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
   animationFrameRate: 10
-  damageBonus: 10
+  damageMultiplier: 1.5
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: 

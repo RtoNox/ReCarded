@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: DoomShroom
+  m_EditorClassIdentifier: 
+  cardName: Atomic Mushroom
+  effectDescription: Wipe out every enemy on screen.
+  cardType: 0
+  playType: 3
+  shopPrice: 200
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 1
+  offensiveEffect: 5
+  sustainEffect: 0
+  modificationEffect: 0
+  cardAnimationFrames:
+  - {fileID: -777267748, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: -1015695045, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: 600781540, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: 1795498484, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: -1286945863, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: -1333181829, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: 505667671, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: -1822116219, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: 879591947, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  - {fileID: 1702999739, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
+  animationFrameRate: 10
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  canStack: 0
+  stackKey: 
+  instantDamage: 10
+  areaRadius: 2.5
+  poisonDamagePerTick: 0
+  poisonDuration: 5
+  poisonTickRate: 1
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 0}

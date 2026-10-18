@@ -51,6 +51,9 @@ public class ShopManager : MonoBehaviour
     private int towerLimitUpgradePurchaseCount = 0;
     private Coroutine messageCoroutine;
 
+    [Header("Sound Effects")]
+    public AudioClip purchaseSound;
+
     void Start()
     {
         HookButtons();
@@ -184,7 +187,8 @@ public class ShopManager : MonoBehaviour
             ShowMessage("Not enough cash!");
             return;
         }
-
+        
+        AudioManager.Instance.PlaySound(purchaseSound);
         towerPlacementManager.IncreaseTowerLimit(towerLimitIncreaseAmount);
         towerLimitUpgradePurchaseCount++;
 
@@ -214,6 +218,7 @@ public class ShopManager : MonoBehaviour
             return;
         }
 
+        AudioManager.Instance.PlaySound(purchaseSound);
         cardHandUI.AddCardToHand(rolledCard);
         ShowMessage("Rolled: " + GetCardDisplayName(rolledCard));
         RefreshShopUI();
@@ -238,6 +243,7 @@ public class ShopManager : MonoBehaviour
             return;
         }
 
+        AudioManager.Instance.PlaySound(purchaseSound);
         cardHandUI.AddCardToHand(cardData);
         ShowMessage("Bought: " + GetCardDisplayName(cardData));
         RefreshShopUI();

@@ -52,8 +52,18 @@ public class Tower : MonoBehaviour
     public int rangeCircleSegments = 80;
     public float rangeLineWidth = 0.05f;
 
+    [Tooltip("Status Effects")]
+    public bool IsStunned { get; private set; }
+    public bool IsAttackSpeedDebuffed { get; private set; }
+
+    private float stunTimer = 0f;
+    private float attackSpeedDebuffTimer = 0f;
+    private float attackSpeedIntervalMultiplier = 1f;
     private float fireCooldown = 0f;
     private TowerPlacementManager placementManager;
+
+    [Header("Sound Effects")]
+    public AudioClip sellSound;
 
     void Awake()
     {
@@ -69,9 +79,32 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-        fireCooldown -= Time.deltaTime;
+        UpdateAttackSpeedDebuff();
 
-        if (fireCooldown <= 0f)
+        // A stun pauses all tower behavior handled by this Update method.
+        // The firing cooldown is deliberately paused rather than reset.
+        if (IsStunned)
+        {
+            stunTimer -= Time.deltaTime;
+
+            if (stunTimer <= 0f)
+            {
+                stunTimer = 0f;
+                IsStunned = false;
+            }
+
+            return;
+        }
+
+        // While debuffed, the cooldown advances more slowly. Because the
+        // cooldown itself remains based on the normal fireRate, the slowdown
+        // ends cleanly when the debuff expires.
+        float cooldownDelta = IsAttackSpeedDebuffed
+            ? Time.deltaTime / attackSpeedIntervalMultiplier
+            : Time.deltaTime;
+        fireCooldown -= cooldownDelta;
+
+        if (fireCooldown <= 0f && fireRate > 0f)
         {
             Enemy target = FindTarget();
 
@@ -87,6 +120,52 @@ public class Tower : MonoBehaviour
     {
         placementManager = newPlacementManager;
         purchaseCost = newPurchaseCost;
+    }
+
+    /// <summary>
+    /// Temporarily disables this tower. Reapplying a stun keeps whichever
+    /// duration is longer, so a shorter stun cannot reduce the time remaining.
+    /// </summary>
+    public void Stun(float duration)
+    {
+        if (duration <= 0f)
+            return;
+
+        stunTimer = Mathf.Max(stunTimer, duration);
+        IsStunned = true;
+    }
+
+    /// <summary>
+    /// Temporarily increases the interval between shots. This is separate from
+    /// stun and does not modify the tower's base fireRate stat.
+    /// A multiplier of 2 means the tower takes twice as long between shots.
+    /// </summary>
+    public void ApplyAttackSpeedDebuff(float duration, float intervalMultiplier)
+    {
+        if (duration <= 0f || intervalMultiplier <= 1f)
+            return;
+
+        attackSpeedDebuffTimer = Mathf.Max(attackSpeedDebuffTimer, duration);
+        attackSpeedIntervalMultiplier = Mathf.Max(
+            attackSpeedIntervalMultiplier,
+            intervalMultiplier
+        );
+        IsAttackSpeedDebuffed = true;
+    }
+
+    private void UpdateAttackSpeedDebuff()
+    {
+        if (!IsAttackSpeedDebuffed)
+            return;
+
+        attackSpeedDebuffTimer -= Time.deltaTime;
+
+        if (attackSpeedDebuffTimer <= 0f)
+        {
+            attackSpeedDebuffTimer = 0f;
+            attackSpeedIntervalMultiplier = 1f;
+            IsAttackSpeedDebuffed = false;
+        }
     }
 
     void SetupRangeLine()
@@ -399,6 +478,7 @@ public class Tower : MonoBehaviour
             placementManager.RemovePlacedTower();
         }
 
+        AudioManager.Instance.PlaySound(sellSound);
         Destroy(gameObject);
     }
 

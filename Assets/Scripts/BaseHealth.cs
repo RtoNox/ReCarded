@@ -11,7 +11,13 @@ public class BaseHealth : MonoBehaviour
     public TMP_Text baseHealthText;
     public GameObject gameOverPanel;
 
+    [Header("Sound Effects")]
+    public AudioClip damageSound;
+    public AudioClip gameOverSound;
+    public AudioClip criticalHealthSound;
+
     private bool gameOver = false;
+    private bool isCriticalHealth = false;
 
     void Start()
     {
@@ -31,6 +37,14 @@ public class BaseHealth : MonoBehaviour
             return;
 
         currentHealth -= damage;
+
+        AudioManager.Instance.PlaySound(damageSound);
+
+        if (currentHealth < maxHealth * 0.25f && !isCriticalHealth)
+        {
+            isCriticalHealth = true;
+            AudioManager.Instance.PlaySound(criticalHealthSound);
+        }
 
         if (currentHealth < 0)
         {
@@ -63,6 +77,8 @@ public class BaseHealth : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
         }
+        
+        AudioManager.Instance.PlaySound(gameOverSound);
 
         Time.timeScale = 0f;
     }

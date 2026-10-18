@@ -17,6 +17,10 @@ MonoBehaviour:
     extremely low attention span.
   cardType: 2
   playType: 0
+  shopPrice: 150
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 3
   offensiveEffect: 0
   sustainEffect: 0
   modificationEffect: 1
@@ -32,7 +36,7 @@ MonoBehaviour:
   - {fileID: -2094040455, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
   - {fileID: 1262741533, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
   animationFrameRate: 10
-  damageBonus: 10
+  damageMultiplier: 1
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: Upgrade

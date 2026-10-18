@@ -6,7 +6,6 @@ public class WaveDisplayUI : MonoBehaviour
 {
     [Header("References")]
     public EnemySpawner enemySpawner;
-    public TowerPlacementManager towerPlacementManager;
 
     [Header("Wave Display")]
     public TMP_Text waveDisplayText;
@@ -25,11 +24,6 @@ public class WaveDisplayUI : MonoBehaviour
         {
             enemySpawner.OnWaveStateChanged += UpdateUI;
         }
-
-        if (towerPlacementManager != null)
-        {
-            towerPlacementManager.OnPlacementStateChanged += HandlePlacementStateChanged;
-        }
     }
 
     void OnDisable()
@@ -38,11 +32,6 @@ public class WaveDisplayUI : MonoBehaviour
         {
             enemySpawner.OnWaveStateChanged -= UpdateUI;
         }
-
-        if (towerPlacementManager != null)
-        {
-            towerPlacementManager.OnPlacementStateChanged -= HandlePlacementStateChanged;
-        }
     }
 
     void Start()
@@ -50,11 +39,6 @@ public class WaveDisplayUI : MonoBehaviour
         if (waveCallButton != null)
         {
             waveCallButton.onClick.AddListener(CallWave);
-        }
-
-        if (towerPlacementManager != null)
-        {
-            isPlacingTower = towerPlacementManager.IsPlacingTower();
         }
 
         UpdateUI();
@@ -69,12 +53,6 @@ public class WaveDisplayUI : MonoBehaviour
         {
             UpdateWaveTimerText();
         }
-    }
-
-    void HandlePlacementStateChanged(bool placingTower)
-    {
-        isPlacingTower = placingTower;
-        UpdateUI();
     }
 
     void CallWave()

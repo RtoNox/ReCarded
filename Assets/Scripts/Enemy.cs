@@ -16,14 +16,19 @@ public class Enemy : MonoBehaviour
     public HealthBarUI healthBarUI;
 
     public Action<Enemy> OnEnemyDeath;
+    public Action<Enemy> OnEnemyDamaged;
 
     private int currentWaypoint = 0;
     private bool hasBeenRemoved = false;
+
+    [Header("References")]
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {
         health = maxHealth;
         UpdateHealthBar();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
@@ -42,6 +47,15 @@ public class Enemy : MonoBehaviour
             speed * Time.deltaTime
         );
 
+        if (target.position.x < transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (target.position.x > transform.position.x)
+        {
+            spriteRenderer.flipX = false;
+        }
+
         if (Vector2.Distance(transform.position, target.position) < 0.05f)
         {
             currentWaypoint++;
@@ -50,6 +64,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        int previousHealth = health;
+
         health -= damage;
 
         if (health < 0)
@@ -58,6 +74,12 @@ public class Enemy : MonoBehaviour
         }
 
         UpdateHealthBar();
+
+        // Notify abilities only when this call actually removes health.
+        if (health < previousHealth)
+        {
+            OnEnemyDamaged?.Invoke(this);
+        }
 
         if (health <= 0)
         {

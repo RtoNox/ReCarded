@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 3315704847955974368}
   - component: {fileID: 8864995417151881988}
   - component: {fileID: 2365533917559803490}
+  - component: {fileID: 9211272718373202227}
   m_Layer: 7
   m_Name: BasicTower
   m_TagString: Untagged
@@ -172,6 +173,7 @@ Transform:
   m_Children:
   - {fileID: 481197948991721344}
   - {fileID: 3741979754655337345}
+  - {fileID: 8301294469608131112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8665887909166948764
@@ -281,11 +283,12 @@ MonoBehaviour:
   fireRate: 1
   projectileSpeed: 15
   projectileLifetime: 1
+  explosionRadius: 1.5
   purchaseCost: 50
   sellRefundPercent: 0.5
   extraSellValue: 0
   projectilePrefab: {fileID: 5415114405666433920, guid: b76021ccf240ead4ca50e513c1c2e24e, type: 3}
-  firePoint: {fileID: 8868743949527846682}
+  firePoint: {fileID: 8301294469608131112}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -296,6 +299,7 @@ MonoBehaviour:
   selectedRangeLine: {fileID: 1985031126890039368}
   rangeCircleSegments: 80
   rangeLineWidth: 0.05
+  sellSound: {fileID: 8300000, guid: 53c7b6dbeb9c5df4bbd1f68fbe0ee3dc, type: 3}
 --- !u!114 &8864995417151881988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +336,58 @@ MonoBehaviour:
   attachedCardIcons: []
   spriteRenderers: []
   validCardTargetColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+--- !u!95 &9211272718373202227
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223586695003443295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4d9393c6dac76640b05f8da13489551, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5114392353187845625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8301294469608131112}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8301294469608131112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114392353187845625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8868743949527846682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4543533818973102412
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,19 +24,21 @@ public class TowerPlacementManager : MonoBehaviour
     public TMP_Text placementMessageText;
     public Button basicTowerButton;
     public GameObject waveCallPanel;
+    public GameObject canvas;
 
     [Header("Message Settings")]
     public float messageDisplayTime = 3f;
 
     private Coroutine messageCoroutine;
 
-    public event Action<bool> OnPlacementStateChanged;
-
     private bool isPlacingTower = false;
     private int placedTowerCount = 0;
 
     private GameObject currentPreviewObject;
     private TowerPlacementPreview currentPreview;
+
+    [Header("Sound Effects")]
+    public AudioClip placementSound;
 
     void Start()
     {
@@ -95,6 +97,8 @@ public class TowerPlacementManager : MonoBehaviour
         SetPlacementState(true);
 
         CreatePlacementPreview();
+
+        AudioManager.Instance.PlayClickSound();
 
         if (pathPlacementHighlighter != null)
         {
@@ -181,6 +185,8 @@ public class TowerPlacementManager : MonoBehaviour
             worldPosition,
             Quaternion.identity
         );
+        
+        AudioManager.Instance.PlaySound(placementSound);
 
         Tower tower = towerObject.GetComponent<Tower>();
 
@@ -259,7 +265,7 @@ public class TowerPlacementManager : MonoBehaviour
     void SetPlacementState(bool placing)
     {
         isPlacingTower = placing;
-        OnPlacementStateChanged?.Invoke(isPlacingTower);
+        canvas.SetActive(!placing);
 
         if (basicTowerButton != null)
         {

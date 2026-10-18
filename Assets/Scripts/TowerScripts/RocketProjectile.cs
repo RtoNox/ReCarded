@@ -1,16 +1,18 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class RocketProjectile : TowerProjectile
 {
     [Header("Explosion")]
     public LayerMask enemyLayer;
+    [Min(0f)] public float explosionRadius = 1.5f;
 
-    private float explosionRadius = 1.5f;
+    [Header("Explosion Visual")]
+    public GameObject areaEffectVisualPrefab;
+    public Color explosionVisualColor = new Color(1f, 0.35f, 0.05f, 0.45f);
 
     public void SetExplosionRadius(float newExplosionRadius)
     {
-        explosionRadius = newExplosionRadius;
+        explosionRadius = Mathf.Max(0f, newExplosionRadius);
     }
 
     protected override void HitTarget()
@@ -34,6 +36,14 @@ public class RocketProjectile : TowerProjectile
 
     void Explode()
     {
+        // Visual only: the actual damage is still handled by the overlap check below.
+        AreaEffectVisual.Spawn(
+            areaEffectVisualPrefab,
+            transform.position,
+            explosionRadius,
+            explosionVisualColor
+        );
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(
             transform.position,
             explosionRadius,

@@ -126,10 +126,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 38
-        width: 482
-        height: 692
+        x: 0
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_1
       rect:
         serializedVersion: 2
-        x: 525
-        y: 38
-        width: 485
-        height: 692
+        x: 512
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1037
-        y: 38
-        width: 485
-        height: 692
+        x: 1024
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_3
       rect:
         serializedVersion: 2
-        x: 1550
-        y: 38
-        width: 485
-        height: 692
+        x: 1536
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2062
-        y: 38
-        width: 483
-        height: 692
+        x: 2048
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_5
       rect:
         serializedVersion: 2
-        x: 2575
-        y: 38
-        width: 482
-        height: 692
+        x: 2560
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_6
       rect:
         serializedVersion: 2
-        x: 3085
-        y: 38
-        width: 485
-        height: 692
+        x: 3072
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_7
       rect:
         serializedVersion: 2
-        x: 3597
-        y: 38
-        width: 485
-        height: 692
+        x: 3584
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_8
       rect:
         serializedVersion: 2
-        x: 4110
-        y: 38
-        width: 485
-        height: 692
+        x: 4096
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: SPEED ACCELERATION-Sheet_9
       rect:
         serializedVersion: 2
-        x: 4622
-        y: 38
-        width: 483
-        height: 692
+        x: 4608
+        y: 0
+        width: 512
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

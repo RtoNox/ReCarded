@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: PoisonField
+  m_EditorClassIdentifier: 
+  cardName: Throwing Poison
+  effectDescription: Throws a vial of poison that lingers on the field for 15 seconds,
+    dealing 1 damage to all enemies in it every 0.5 second.
+  cardType: 0
+  playType: 2
+  shopPrice: 40
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 10
+  offensiveEffect: 4
+  sustainEffect: 0
+  modificationEffect: 0
+  cardAnimationFrames:
+  - {fileID: -1016679891, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: -1627933448, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: -1127515058, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: 1723517997, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: -1176249659, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: -353477754, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: -784740046, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: 1506875331, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: 1432950637, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  - {fileID: 368572945, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
+  animationFrameRate: 10
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  canStack: 0
+  stackKey: 
+  instantDamage: 10
+  areaRadius: 3
+  poisonDamagePerTick: 1
+  poisonDuration: 15
+  poisonTickRate: 0.5
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 0}

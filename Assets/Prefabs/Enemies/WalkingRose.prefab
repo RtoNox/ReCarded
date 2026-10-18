@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6497735933950146330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 742914970248813526, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 742914970248813526, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806214669632527550, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171862106977591579, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b370757df06789849bac41dd0141ae7a, type: 2}
+    - target: {fileID: 1749946471313186028, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1064978005, guid: 040536dbd05a5fd41b5d8964e704884f, type: 3}
+    - target: {fileID: 3497786027469687856, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1064978005, guid: 040536dbd05a5fd41b5d8964e704884f, type: 3}
+    - target: {fileID: 3497786027469687856, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497786027469687856, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497786027469687856, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Name
+      value: WalkingRose
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341832878692456911, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b370757df06789849bac41dd0141ae7a, type: 2}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: cashReward
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5772873964189229994}
+  m_SourcePrefab: {fileID: 100100000, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+--- !u!1 &7607251142215774754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3728693502479369528, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+  m_PrefabInstance: {fileID: 6497735933950146330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5772873964189229994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607251142215774754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89b2713936c70b42904ef762a842659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 1.5
+  debuffRadius: 2.5
+  debuffDuration: 2
+  attackIntervalMultiplier: 2
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  areaEffectVisualPrefab: {fileID: 3490146308964544595, guid: b3de76ad5a0e3844cb2415728ef38621, type: 3}
+  debuffVisualColor: {r: 1, g: 0, b: 0.19607843, a: 0.39215687}
+  visualDuration: 2

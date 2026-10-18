@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df83552a507064b94efbd0057a8c7a, type: 3}
+  m_Name: TrapperUpgrade
+  m_EditorClassIdentifier: 
+  cardName: Get Stick Bugged
+  effectDescription: Upgrades a tower into a special tower that places traps on the
+    ground every few seconds and can put up to 12 traps.
+  cardType: 2
+  playType: 0
+  shopPrice: 90
+  canAppearInSpecificShop: 1
+  canAppearInGacha: 1
+  gachaWeight: 6
+  offensiveEffect: 0
+  sustainEffect: 0
+  modificationEffect: 6
+  cardAnimationFrames:
+  - {fileID: -1042109605, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 2033673960, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 655465788, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: -206781349, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: -879397149, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 660360855, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 2076236744, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 828172675, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 1818881855, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  - {fileID: 1873516631, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
+  animationFrameRate: 10
+  damageMultiplier: 1
+  attackSpeedMultiplier: 1
+  canStack: 0
+  stackKey: Upgrade
+  instantDamage: 10
+  areaRadius: 2
+  poisonDamagePerTick: 0
+  poisonDuration: 5
+  poisonTickRate: 1
+  healPercent: 0.25
+  timedRegenPercentPerTick: 0.05
+  timedRegenDuration: 5
+  timedRegenTickRate: 1
+  passiveRegenPercentPerTick: 0.001
+  passiveRegenTickRate: 1
+  shieldPercent: 0.25
+  maxHealthBonusPercent: 0.25
+  modifiedTowerPrefab: {fileID: 1804478286899456452, guid: a0007f977c4cabb48a9470f0cb083241, type: 3}
