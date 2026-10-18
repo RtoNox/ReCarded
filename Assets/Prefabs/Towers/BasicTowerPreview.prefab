@@ -146,8 +146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8868743949527846682}
   - component: {fileID: 8665887909166948764}
-  - component: {fileID: 7074438211635437330}
   - component: {fileID: -6073068934494699077}
+  - component: {fileID: 1204413330331201803}
   m_Layer: 0
   m_Name: BasicTowerPreview
   m_TagString: Untagged
@@ -211,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 384518355, guid: 4b02e94e104ae0b42a3237a3600915b2, type: 3}
   m_Color: {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
   m_FlipX: 0
@@ -223,8 +223,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7074438211635437330
-CircleCollider2D:
+--- !u!114 &-6073068934494699077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223586695003443295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27012ed15ebbb9e41b936fbc3ace65e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderers:
+  - {fileID: 8665887909166948764}
+  rangeLine: {fileID: 7073694200124283578}
+  validColor: {r: 1, g: 1, b: 1, a: 0.45}
+  invalidColor: {r: 1, g: 0.2, b: 0.2, a: 0.45}
+  rangeValidColor: {r: 1, g: 1, b: 1, a: 0.8}
+  rangeInvalidColor: {r: 1, g: 0.2, b: 0.2, a: 0.8}
+  circleSegments: 80
+  rangeLineWidth: 0.05
+--- !u!70 &1204413330331201803
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -256,26 +277,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &-6073068934494699077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4223586695003443295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27012ed15ebbb9e41b936fbc3ace65e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderers:
-  - {fileID: 8665887909166948764}
-  rangeLine: {fileID: 7073694200124283578}
-  validColor: {r: 1, g: 1, b: 1, a: 0.45}
-  invalidColor: {r: 1, g: 0.2, b: 0.2, a: 0.45}
-  rangeValidColor: {r: 1, g: 1, b: 1, a: 0.8}
-  rangeInvalidColor: {r: 1, g: 0.2, b: 0.2, a: 0.8}
-  circleSegments: 80
-  rangeLineWidth: 0.05
+  m_Size: {x: 0.3, y: 0.8}
+  m_Direction: 0

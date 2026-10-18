@@ -13,7 +13,6 @@ public class WaveDisplayUI : MonoBehaviour
     [Header("Wave Call UI")]
     public GameObject waveCallPanel;
     public Button waveCallButton;
-    public TMP_Text waveCallText;
     public TMP_Text waveTimerText;
 
     private bool isPlacingTower = false;
@@ -115,15 +114,6 @@ public class WaveDisplayUI : MonoBehaviour
 
         if (!canCallWave)
             return;
-
-        if (!enemySpawner.HasGameStarted())
-        {
-            waveCallText.text = "Start Wave";
-        }
-        else
-        {
-            waveCallText.text = "Call Next Wave";
-        }
     }
 
     void UpdateWaveTimerText()

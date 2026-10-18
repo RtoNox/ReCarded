@@ -63,7 +63,7 @@ public class BaseHealth : MonoBehaviour
     {
         if (baseHealthText != null)
         {
-            baseHealthText.text = "Base HP: " + currentHealth;
+            baseHealthText.text = currentHealth.ToString();
         }
     }
 

@@ -17,6 +17,6 @@ public class CurrencyUI : MonoBehaviour
         if (cashText == null || CurrencyManager.Instance == null)
             return;
 
-        cashText.text = "Cash: $" + CurrencyManager.Instance.GetCurrentCash();
+        cashText.text = CurrencyManager.Instance.GetCurrentCash().ToString();
     }
 }
