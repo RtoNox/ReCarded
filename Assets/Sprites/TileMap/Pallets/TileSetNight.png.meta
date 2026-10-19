@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2aa0d5340fbc11d45b0852370ced1d00
+guid: ec1be50a7e6f1cb4d94c7eedb844dcc8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,37 +93,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileSetNight_0
+      name: TileSetNight 1_0
       rect:
         serializedVersion: 2
         x: 32
@@ -137,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c03ebd755046ec342b1edc2430808a15
-      internalID: -1833963000
+      spriteID: 611f2135be35ef64297aa441caf461e5
+      internalID: -1339931093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_1
+      name: TileSetNight 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a070eeb5dceab1e45a6d17b63c70fc71
-      internalID: 944969005
+      spriteID: 9f637ca9b184da142b44f58a6066b3a0
+      internalID: -636000382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_2
+      name: TileSetNight 1_2
       rect:
         serializedVersion: 2
         x: 96
@@ -179,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b416babf67d973d4a9491a429beea7dc
-      internalID: -822078006
+      spriteID: 770a3e85f0a15cc41bd47bbbd621711c
+      internalID: -656186196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_3
+      name: TileSetNight 1_3
       rect:
         serializedVersion: 2
         x: 128
@@ -200,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce6f9a7b520362144a281e9481e1be7a
-      internalID: 2111185461
+      spriteID: afa982b43822d324cb443a6ff0b08cb2
+      internalID: 2105329090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_4
+      name: TileSetNight 1_4
       rect:
         serializedVersion: 2
         x: 192
@@ -221,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5675ab619be57dd478b30323f7b25ad2
-      internalID: 522530380
+      spriteID: c283a83a16530d74db9f1ce5dea0c438
+      internalID: -1904872871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_5
+      name: TileSetNight 1_5
       rect:
         serializedVersion: 2
         x: 224
@@ -242,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a30dd1aff44172044935ca28d1332290
-      internalID: 157913268
+      spriteID: c63b4f6b1782fc64a833d1cc1e0ceb01
+      internalID: 1254508838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_6
+      name: TileSetNight 1_6
       rect:
         serializedVersion: 2
         x: 256
@@ -263,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b26c7b437f6aee2408ef6f23f1a54f5e
-      internalID: 154026631
+      spriteID: 8f0dd37fd4ab88142aaa9ea60b5cf308
+      internalID: -807287961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_7
+      name: TileSetNight 1_7
       rect:
         serializedVersion: 2
         x: 288
@@ -284,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653726ef4aa088c44b363af55b640373
-      internalID: -2102565381
+      spriteID: 3a5e6068180c00d489d49c335f1d3e2c
+      internalID: 1422572523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_8
+      name: TileSetNight 1_8
       rect:
         serializedVersion: 2
         x: 320
@@ -305,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3fb5f8eab60164e9a69c8d926339b5
-      internalID: -1671187740
+      spriteID: 3494f53855127af43973340d99dd6564
+      internalID: -697703716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_9
+      name: TileSetNight 1_9
       rect:
         serializedVersion: 2
         x: 352
@@ -326,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d8c53af7634a094c96cbe6b40844e94
-      internalID: -1765575726
+      spriteID: b06bb4782482f3b47adeb2ae92e1c6fe
+      internalID: -289403809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_10
+      name: TileSetNight 1_10
       rect:
         serializedVersion: 2
         x: 384
@@ -347,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc889c500850f5458f76e954740bb4c
-      internalID: 527895005
+      spriteID: 1de6ba477b831ff43815d70f469a6f73
+      internalID: -563123639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_11
+      name: TileSetNight 1_11
       rect:
         serializedVersion: 2
         x: 416
@@ -368,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6fb113e9c078074ea3bb9f8cb41c618
-      internalID: -1442728708
+      spriteID: a441f974744b36e4cb558a05e9a22d75
+      internalID: -539898937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_12
+      name: TileSetNight 1_12
       rect:
         serializedVersion: 2
         x: 448
@@ -389,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a482d07a2bd74574ba6788b6505a2a24
-      internalID: -1215386918
+      spriteID: 543011cb4a9a0ba44bd4e9966e7fe51b
+      internalID: -1642140361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_13
+      name: TileSetNight 1_13
       rect:
         serializedVersion: 2
         x: 480
@@ -410,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e08916af0cbc274cb36b7aff6a91ef5
-      internalID: -1673232981
+      spriteID: bb1bf7b3f761901418e96e361dca4cee
+      internalID: -1178673828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetNight_14
+      name: TileSetNight 1_14
       rect:
         serializedVersion: 2
         x: 512
@@ -431,8 +405,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 478c193b8ef026148b1bea1568b8bfed
-      internalID: 380991826
+      spriteID: dfe31cd9a102d3d459b1150af6c827c1
+      internalID: 320402085
       vertices: []
       indices: 
       edges: []
@@ -448,21 +422,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileSetNight_0: -1833963000
-      TileSetNight_1: 944969005
-      TileSetNight_10: 527895005
-      TileSetNight_11: -1442728708
-      TileSetNight_12: -1215386918
-      TileSetNight_13: -1673232981
-      TileSetNight_14: 380991826
-      TileSetNight_2: -822078006
-      TileSetNight_3: 2111185461
-      TileSetNight_4: 522530380
-      TileSetNight_5: 157913268
-      TileSetNight_6: 154026631
-      TileSetNight_7: -2102565381
-      TileSetNight_8: -1671187740
-      TileSetNight_9: -1765575726
+      TileSetNight 1_0: -1339931093
+      TileSetNight 1_1: -636000382
+      TileSetNight 1_10: -563123639
+      TileSetNight 1_11: -539898937
+      TileSetNight 1_12: -1642140361
+      TileSetNight 1_13: -1178673828
+      TileSetNight 1_14: 320402085
+      TileSetNight 1_2: -656186196
+      TileSetNight 1_3: 2105329090
+      TileSetNight 1_4: -1904872871
+      TileSetNight 1_5: 1254508838
+      TileSetNight 1_6: -807287961
+      TileSetNight 1_7: 1422572523
+      TileSetNight 1_8: -697703716
+      TileSetNight 1_9: -289403809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
