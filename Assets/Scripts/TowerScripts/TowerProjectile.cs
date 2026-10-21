@@ -68,6 +68,14 @@ public class TowerProjectile : MonoBehaviour
             target.TakeDamage(damage);
         }
 
+        ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+
+        if (ps != null)
+        {
+            ps.transform.parent = null;
+            ps.Stop();
+        }
+
         Destroy(gameObject);
     }
 }
