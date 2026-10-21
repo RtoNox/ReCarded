@@ -17,6 +17,7 @@ MonoBehaviour:
     extremely low attention span.
   cardType: 2
   playType: 0
+  cardValue: 10
   shopPrice: 150
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -36,7 +37,7 @@ MonoBehaviour:
   - {fileID: -2094040455, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
   - {fileID: 1262741533, guid: 7c4d5ad52b243c847b3b4caf6b65480a, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: Upgrade

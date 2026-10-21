@@ -91,14 +91,13 @@ public class CardPlayManager : MonoBehaviour
             if (cardHandUI != null)
             {
                 cardHandUI.RemoveCardFromHand(cardUI);
+                AudioManager.Instance.PlaySound(cardSound);
             }
             else
             {
                 Destroy(cardUI.gameObject);
             }
         }
-
-        AudioManager.Instance.PlaySound(cardSound);
 
         return success;
     }

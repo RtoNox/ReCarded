@@ -65,6 +65,8 @@ public class DeathStunEnemy : MonoBehaviour
             stunVisualColor
         );
 
+        ScreenFlasher.Instance.FlashScreen(Color.white, 1f);
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(
             deathPosition,
             stunRadius,

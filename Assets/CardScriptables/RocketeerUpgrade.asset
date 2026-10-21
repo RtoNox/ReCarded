@@ -16,6 +16,7 @@ MonoBehaviour:
   effectDescription: Upgrades a tower into a long-range area damage tower.
   cardType: 2
   playType: 0
+  cardValue: 8
   shopPrice: 120
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   - {fileID: 27142159, guid: d320e75d0b2fc3c4fade03f6f63512c2, type: 3}
   - {fileID: 1195975300, guid: d320e75d0b2fc3c4fade03f6f63512c2, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: Upgrade

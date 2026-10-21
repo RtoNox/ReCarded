@@ -16,6 +16,7 @@ MonoBehaviour:
   effectDescription: Deals 10 damage to all enemies in a small area.
   cardType: 0
   playType: 2
+  cardValue: 2
   shopPrice: 30
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   - {fileID: -221164976, guid: e79c4f1588531ee48abe9223ab3b99dc, type: 3}
   - {fileID: 2079995955, guid: e79c4f1588531ee48abe9223ab3b99dc, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: 

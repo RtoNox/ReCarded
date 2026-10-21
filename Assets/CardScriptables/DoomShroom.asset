@@ -16,6 +16,7 @@ MonoBehaviour:
   effectDescription: Wipe out every enemy on screen.
   cardType: 0
   playType: 3
+  cardValue: 9
   shopPrice: 200
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   - {fileID: 879591947, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
   - {fileID: 1702999739, guid: b92a8e30d35b4084aa5256153dd33ae6, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: 

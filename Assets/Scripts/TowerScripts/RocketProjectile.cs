@@ -17,6 +17,12 @@ public class RocketProjectile : TowerProjectile
 
     protected override void HitTarget()
     {
+        if (projectileParticles != null)
+        {
+            projectileParticles.transform.parent = null;
+            projectileParticles.Stop();
+        }
+
         Explode();
     }
 

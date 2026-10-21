@@ -6,15 +6,56 @@ public class TowerProjectile : MonoBehaviour
     protected int damage;
     protected float speed;
     protected float lifetime;
+    protected Color projectileColor;
+
+    public SpriteRenderer spriteRenderer;
+    public TrailRenderer trailRenderer;
+    public ParticleSystem projectileParticles;
 
     protected bool initialized = false;
 
-    public virtual void Initialize(Enemy newTarget, int newDamage, float newSpeed, float newLifetime)
+    private void Awake()
+    {
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        
+        if (trailRenderer == null)
+        {
+            trailRenderer = GetComponent<TrailRenderer>();
+        }
+
+        if (projectileParticles == null)
+        {
+            projectileParticles = GetComponent<ParticleSystem>();
+        }
+    }
+
+    public virtual void Initialize(Enemy newTarget, int newDamage, float newSpeed, float newLifetime, Color newColor)
     {
         target = newTarget;
         damage = newDamage;
         speed = newSpeed;
         lifetime = newLifetime;
+        projectileColor = newColor;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = projectileColor;
+        }
+
+        if (trailRenderer != null)
+        {
+            trailRenderer.startColor = projectileColor;
+            trailRenderer.endColor = new Color(projectileColor.r, projectileColor.g, projectileColor.b, 0f);
+        }
+
+        if (projectileParticles != null)
+        {
+            var main = projectileParticles.main;
+            main.startColor = projectileColor;
+        }
 
         initialized = true;
 
@@ -68,12 +109,10 @@ public class TowerProjectile : MonoBehaviour
             target.TakeDamage(damage);
         }
 
-        ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
-
-        if (ps != null)
+        if (projectileParticles != null)
         {
-            ps.transform.parent = null;
-            ps.Stop();
+            projectileParticles.transform.parent = null;
+            projectileParticles.Stop();
         }
 
         Destroy(gameObject);

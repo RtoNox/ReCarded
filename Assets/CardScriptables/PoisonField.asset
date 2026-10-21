@@ -17,6 +17,7 @@ MonoBehaviour:
     dealing 1 damage to all enemies in it every 0.5 second.
   cardType: 0
   playType: 2
+  cardValue: 2
   shopPrice: 40
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -36,7 +37,7 @@ MonoBehaviour:
   - {fileID: 1432950637, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
   - {fileID: 368572945, guid: 401aa9adade3cf044a545ba83f96fde5, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: 

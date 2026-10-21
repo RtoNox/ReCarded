@@ -17,6 +17,7 @@ MonoBehaviour:
     ground every few seconds and can put up to 12 traps.
   cardType: 2
   playType: 0
+  cardValue: 7
   shopPrice: 90
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -36,7 +37,7 @@ MonoBehaviour:
   - {fileID: 1818881855, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
   - {fileID: 1873516631, guid: 3e5acb47d43bdbd4e9911949ff067b79, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: Upgrade

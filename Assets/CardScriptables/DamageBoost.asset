@@ -16,6 +16,7 @@ MonoBehaviour:
   effectDescription: Gives a 50% damage boost to any tower.
   cardType: 0
   playType: 0
+  cardValue: 4
   shopPrice: 40
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   - {fileID: -2077085530, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
   - {fileID: 707272706, guid: 41fd9c8e4976720458b787c0dfbfe8dc, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1.5
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: 

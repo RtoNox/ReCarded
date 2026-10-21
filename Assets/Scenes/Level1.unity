@@ -758,7 +758,19 @@ MonoBehaviour:
   cardPrefab: {fileID: 7730612314977375196, guid: a8760c256251caf49a5a7458f9db093e, type: 3}
   cardPreviewUI: {fileID: 128886860}
   cardPlayManager: {fileID: 107321749}
-  startingCards: []
+  maxStartingHandValue: 5
+  availableCards:
+  - {fileID: 11400000, guid: 8c563d967e9b3e648869184daf5450ca, type: 2}
+  - {fileID: 11400000, guid: ffdba0505b29e394cb2e9001befaf935, type: 2}
+  - {fileID: 11400000, guid: 7dc0170a1bb831f408914057329dd13e, type: 2}
+  - {fileID: 11400000, guid: 66af5f67a90ecbc43881ec16475937e5, type: 2}
+  - {fileID: 11400000, guid: 26f73aa94fc608f4c8a9bfb804d33431, type: 2}
+  - {fileID: 11400000, guid: aa6ebe719250e124e854425a33f806b4, type: 2}
+  - {fileID: 11400000, guid: b4db46191bbdc944791bbaa92d8150d9, type: 2}
+  - {fileID: 11400000, guid: 13bbfb6bb9418124e84bcc94fff407ff, type: 2}
+  - {fileID: 11400000, guid: 92e9df2adc581e24fa18442cf6171f5b, type: 2}
+  - {fileID: 11400000, guid: 057e7efc9464f304b91b9957feff135c, type: 2}
+  - {fileID: 11400000, guid: 3b4ed58393163dc4db997738be5d1461, type: 2}
 --- !u!114 &107321748
 MonoBehaviour:
   m_ObjectHideFlags: 0

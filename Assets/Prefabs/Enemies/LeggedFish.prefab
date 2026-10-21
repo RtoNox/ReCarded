@@ -117,6 +117,9 @@ MonoBehaviour:
   cashReward: 5
   healthBarUI: {fileID: 678756786801115222}
   spriteRenderer: {fileID: 1749946471313186028}
+  deathParticlePrefab: {fileID: 3249342692659442689, guid: cd1bc9c73cb5bb24f9e7b9e0cfc0892f, type: 3}
+  damagedColor: {r: 1, g: 0, b: 0, a: 1}
+  deathParticleColor: {r: 0.9960785, g: 0.5137255, b: 0, a: 1}
 --- !u!1 &6584481678341716150
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +239,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 86318715924002144, guid: 2ee246240fad51e498288610dd8b73fe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683133526071416270, guid: 2ee246240fad51e498288610dd8b73fe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683133526071416270, guid: 2ee246240fad51e498288610dd8b73fe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

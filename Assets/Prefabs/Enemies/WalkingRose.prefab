@@ -112,6 +112,18 @@ PrefabInstance:
       propertyPath: cashReward
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: deathParticleColor.b
+      value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: deathParticleColor.g
+      value: 0.050980397
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152932392017567288, guid: 9fea909c3d9fc9a40b49520cd25d3ba4, type: 3}
+      propertyPath: deathParticleColor.r
+      value: 0.54901963
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

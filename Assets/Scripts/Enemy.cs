@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -21,8 +22,12 @@ public class Enemy : MonoBehaviour
     private int currentWaypoint = 0;
     private bool hasBeenRemoved = false;
 
-    [Header("References")]
+    [Header("Visuals")]
     public SpriteRenderer spriteRenderer;
+    public GameObject deathParticlePrefab;
+
+    public Color damagedColor = Color.red;
+    public Color deathParticleColor = Color.green;
 
     void Start()
     {
@@ -79,6 +84,8 @@ public class Enemy : MonoBehaviour
         if (health < previousHealth)
         {
             OnEnemyDamaged?.Invoke(this);
+            StopAllCoroutines();
+            StartCoroutine(DamageFlash());
         }
 
         if (health <= 0)
@@ -93,6 +100,15 @@ public class Enemy : MonoBehaviour
         {
             healthBarUI.SetHealth(health, maxHealth);
         }
+    }
+
+    IEnumerator DamageFlash()
+    {
+        spriteRenderer.color = damagedColor;
+
+        yield return new WaitForSeconds(0.2f);
+
+        spriteRenderer.color = Color.white;
     }
 
     public int GetCurrentWaypoint()
@@ -131,6 +147,22 @@ public class Enemy : MonoBehaviour
         if (CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.AddCash(cashReward);
+        }
+
+        if (deathParticlePrefab != null)
+        {
+            GameObject deathParticles = Instantiate(
+                deathParticlePrefab,
+                transform.position,
+                Quaternion.identity
+            );
+
+            ParticleSystem particleSystem = deathParticles.GetComponent<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                var main = particleSystem.main;
+                main.startColor = deathParticleColor;
+            }
         }
 
         RemoveEnemy();

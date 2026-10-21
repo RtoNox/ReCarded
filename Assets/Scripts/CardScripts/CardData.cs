@@ -63,6 +63,11 @@ public class CardData : ScriptableObject
     public CardType cardType;
     public CardPlayType playType;
 
+    [Header("Starting Hand Value")]
+    [Tooltip("How much of the level's starting-hand value budget this card uses. Must be at least 1.")]
+    [Min(1)]
+    public int cardValue = 1;
+
     [Header("Shop Values")]
     [Tooltip("The guaranteed-buy price in the specific card shop.")]
     public int shopPrice = 100;

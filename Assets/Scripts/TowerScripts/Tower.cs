@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 
 public enum TargetingMode
 {
@@ -41,6 +43,13 @@ public class Tower : MonoBehaviour
     public Transform firePoint;
     public LayerMask enemyLayer;
 
+    [Header("Continuous Fire Toggle")]
+    [Tooltip("If true, the tower will only play its charge up particle effect once until there are no targets in range.")]
+    public bool continuousFire = false;
+
+    private float chargeTimer = 0f;
+    private bool hasFinishedCharging = false;
+
     [Header("Targeting")]
     public TargetingMode targetingMode = TargetingMode.First;
 
@@ -51,6 +60,11 @@ public class Tower : MonoBehaviour
     public LineRenderer selectedRangeLine;
     public int rangeCircleSegments = 80;
     public float rangeLineWidth = 0.05f;
+
+    [Header("Shooting Visuals")]
+    public Color projectileColor = Color.white;
+    public ParticleSystem towerChargeParticles;
+    public float towerChargeDuration = 0.5f;
 
     [Tooltip("Status Effects")]
     public bool IsStunned { get; private set; }
@@ -72,6 +86,12 @@ public class Tower : MonoBehaviour
             towerSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
 
+        if (towerChargeParticles != null)
+        {
+            var main = towerChargeParticles.main;
+            main.startColor = projectileColor;
+        }
+
         SetupRangeLine();
 
         SetSelected(false);
@@ -81,11 +101,14 @@ public class Tower : MonoBehaviour
     {
         UpdateAttackSpeedDebuff();
 
-        // A stun pauses all tower behavior handled by this Update method.
-        // The firing cooldown is deliberately paused rather than reset.
         if (IsStunned)
         {
             stunTimer -= Time.deltaTime;
+
+            if (continuousFire)
+            {
+                ResetChargeState();
+            }
 
             if (stunTimer <= 0f)
             {
@@ -96,13 +119,62 @@ public class Tower : MonoBehaviour
             return;
         }
 
-        // While debuffed, the cooldown advances more slowly. Because the
-        // cooldown itself remains based on the normal fireRate, the slowdown
-        // ends cleanly when the debuff expires.
-        float cooldownDelta = IsAttackSpeedDebuffed
+        // Special behavior for continuous-fire towers.
+        if (continuousFire)
+        {
+            Enemy target = FindTarget();
+
+            // Reset ONLY when no valid targets remain in range.
+            if (target == null)
+            {
+                ResetChargeState();
+                return;
+            }
+
+            // Charge once when targets first become available.
+            if (!hasFinishedCharging)
+            {
+                chargeTimer += Time.deltaTime;
+
+                if (towerChargeParticles != null && chargeTimer == Time.deltaTime)
+                {
+                    towerChargeParticles.Stop();
+                    towerChargeParticles.Clear();
+                    towerChargeParticles.Play();
+                }
+
+                if (chargeTimer < towerChargeDuration)
+                    return;
+
+                // Stop the charging effect as soon as charging finishes.
+                if (towerChargeParticles != null)
+                    towerChargeParticles.Stop();
+
+                hasFinishedCharging = true;
+            }
+
+            // Keep firing and freely switch targets without recharging.
+            float cooldownDelta = IsAttackSpeedDebuffed
+                ? Time.deltaTime / attackSpeedIntervalMultiplier
+                : Time.deltaTime;
+
+            fireCooldown -= cooldownDelta;
+
+            if (fireCooldown <= 0f && fireRate > 0f)
+            {
+                Shoot(target);
+                fireCooldown = fireRate;
+            }
+
+            return;
+        }
+
+        // Default behavior for regular towers.
+        float normalCooldownDelta = IsAttackSpeedDebuffed
             ? Time.deltaTime / attackSpeedIntervalMultiplier
             : Time.deltaTime;
-        fireCooldown -= cooldownDelta;
+
+        fireCooldown -= normalCooldownDelta;
 
         if (fireCooldown <= 0f && fireRate > 0f)
         {
@@ -110,7 +182,11 @@ public class Tower : MonoBehaviour
 
             if (target != null)
             {
-                Shoot(target);
+                if (towerChargeParticles != null && towerChargeDuration > 0f)
+                    StartCoroutine(ChargeAndShoot(target));
+                else
+                    Shoot(target);
+
                 fireCooldown = fireRate;
             }
         }
@@ -218,6 +294,39 @@ public class Tower : MonoBehaviour
         }
     }
 
+    private IEnumerator ChargeAndShoot(Enemy target)
+    {
+        if (towerChargeParticles != null)
+        {
+            towerChargeParticles.Stop();
+            towerChargeParticles.Clear();
+            towerChargeParticles.Play();
+        }
+
+        if (towerChargeDuration > 0f)
+            yield return new WaitForSeconds(towerChargeDuration);
+
+        // Stop the charging effect as soon as charging finishes.
+        if (towerChargeParticles != null)
+            towerChargeParticles.Stop();
+
+        if (!IsStunned && target != null)
+            Shoot(target);
+    }
+
+    private void ResetChargeState()
+    {
+        chargeTimer = 0f;
+        hasFinishedCharging = false;
+
+        if (towerChargeParticles != null)
+        {
+            towerChargeParticles.Stop();
+            towerChargeParticles.Clear();
+            towerChargeParticles.Play();
+        }
+    }
+
     void Shoot(Enemy target)
     {
         if (projectilePrefab == null)
@@ -252,7 +361,8 @@ public class Tower : MonoBehaviour
             target,
             damage,
             projectileSpeed,
-            projectileLifetime
+            projectileLifetime,
+            projectileColor
         );
 
         RocketProjectile rocketProjectile = projectileObject.GetComponent<RocketProjectile>();

@@ -16,6 +16,7 @@ MonoBehaviour:
   effectDescription: Upgrades a tower into a bulky high damage close range tower.
   cardType: 2
   playType: 0
+  cardValue: 5
   shopPrice: 80
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   - {fileID: 2119395090, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
   - {fileID: 1652680904, guid: 2348a0e1b9be29b4cb8ffbfad9a5037e, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: Upgrade

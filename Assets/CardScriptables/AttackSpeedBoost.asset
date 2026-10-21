@@ -16,6 +16,7 @@ MonoBehaviour:
   effectDescription: Doubles a tower's attack speed.
   cardType: 0
   playType: 0
+  cardValue: 3
   shopPrice: 50
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -35,7 +36,7 @@ MonoBehaviour:
   - {fileID: -1206717884, guid: c9983e413ba33814db39094a0fd50ef8, type: 3}
   - {fileID: -1151697780, guid: c9983e413ba33814db39094a0fd50ef8, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 0.5
   canStack: 0
   stackKey: 

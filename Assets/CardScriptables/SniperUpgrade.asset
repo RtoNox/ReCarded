@@ -17,6 +17,7 @@ MonoBehaviour:
     massive damage but has the slowest firerate.
   cardType: 2
   playType: 0
+  cardValue: 6
   shopPrice: 100
   canAppearInSpecificShop: 1
   canAppearInGacha: 1
@@ -36,7 +37,7 @@ MonoBehaviour:
   - {fileID: 203591872, guid: 942ade5837d9f6c41a475f531a94a2d3, type: 3}
   - {fileID: 825471166, guid: 942ade5837d9f6c41a475f531a94a2d3, type: 3}
   animationFrameRate: 10
-  damageMultiplier: 1
+  damageBonus: 0
   attackSpeedMultiplier: 1
   canStack: 0
   stackKey: Upgrade
