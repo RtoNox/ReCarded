@@ -879,6 +879,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   poisonFieldPrefab: {fileID: 3490146308964544595, guid: 0a9b55aa3cf0897428a0101e97dd8e63, type: 3}
+  areaEffectVisualPrefab: {fileID: 3490146308964544595, guid: b3de76ad5a0e3844cb2415728ef38621, type: 3}
+  instantDamageAreaColor: {r: 1, g: 0, b: 0, a: 0.5882353}
 --- !u!114 &107321749
 MonoBehaviour:
   m_ObjectHideFlags: 0

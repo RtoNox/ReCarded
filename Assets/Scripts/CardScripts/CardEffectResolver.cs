@@ -8,6 +8,8 @@ public class CardEffectResolver : MonoBehaviour
 
     [Header("Area Effect Prefabs")]
     public GameObject poisonFieldPrefab;
+    public GameObject areaEffectVisualPrefab;
+    public Color instantDamageAreaColor = new Color(1f, 0f, 0f, 0.5f);
 
     public bool CanCardBePlayedOnTower(CardData cardData, TowerCardTarget towerCardTarget)
     {
@@ -274,6 +276,13 @@ public class CardEffectResolver : MonoBehaviour
         switch (cardData.offensiveEffect)
         {
             case OffensiveCardEffect.InstantAreaDamage:
+                AreaEffectVisual.Spawn(
+                    areaEffectVisualPrefab,
+                    centerPosition,
+                    cardData.areaRadius,
+                    instantDamageAreaColor
+                );
+
                 DamageEnemiesInArea(
                     centerPosition,
                     cardData.areaRadius,

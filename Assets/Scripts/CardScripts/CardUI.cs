@@ -90,6 +90,7 @@ public class CardUI : MonoBehaviour,
 
         canvasGroup.blocksRaycasts = false;
         transform.SetAsLastSibling();
+        animatedCardArt.cardImage.color = new Color(1f, 1f, 1f, 0.5f); // Make the card semi-transparent while dragging
 
         if (cardPlayManager != null)
         {
@@ -110,6 +111,7 @@ public class CardUI : MonoBehaviour,
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+        animatedCardArt.cardImage.color = Color.white; // Restore the card's opacity
 
         bool cardWasPlayed = false;
 
