@@ -114,7 +114,7 @@ MonoBehaviour:
   speed: 2
   maxHealth: 5
   health: 5
-  cashReward: 5
+  cashReward: 10
   healthBarUI: {fileID: 678756786801115222}
   spriteRenderer: {fileID: 1749946471313186028}
   deathParticlePrefab: {fileID: 3249342692659442689, guid: cd1bc9c73cb5bb24f9e7b9e0cfc0892f, type: 3}
