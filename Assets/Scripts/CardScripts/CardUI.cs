@@ -21,6 +21,7 @@ public class CardUI : MonoBehaviour,
     private CanvasGroup canvasGroup;
     private Transform originalParent;
     private Vector2 originalAnchoredPosition;
+    private int originalIndex;
 
     public void Setup(
         CardData newCardData,
@@ -80,6 +81,7 @@ public class CardUI : MonoBehaviour,
     {
         originalParent = transform.parent;
         originalAnchoredPosition = rectTransform.anchoredPosition;
+        originalIndex = transform.GetSiblingIndex();
 
         if (cardPreviewUI != null)
         {
@@ -127,5 +129,6 @@ public class CardUI : MonoBehaviour,
     {
         transform.SetParent(originalParent);
         rectTransform.anchoredPosition = originalAnchoredPosition;
+        transform.SetSiblingIndex(originalIndex);
     }
 }
