@@ -977,14 +977,13 @@ GameObject:
   - component: {fileID: 162668150}
   - component: {fileID: 162668153}
   - component: {fileID: 162668152}
-  - component: {fileID: 162668151}
   m_Layer: 5
   m_Name: TowerPlacementMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &162668150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1004,18 +1003,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &162668151
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162668149}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!114 &162668152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6225,6 +6212,7 @@ GameObject:
   - component: {fileID: 695399868}
   - component: {fileID: 695399869}
   - component: {fileID: 695399870}
+  - component: {fileID: 695399871}
   m_Layer: 5
   m_Name: CardHandPanel
   m_TagString: Untagged
@@ -6299,6 +6287,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 0
+--- !u!225 &695399871
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695399865}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &700929537
 GameObject:
   m_ObjectHideFlags: 0
@@ -14099,7 +14099,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1453886021
 GameObject:
@@ -20353,8 +20353,8 @@ SceneRoots:
   - {fileID: 1353645788}
   - {fileID: 264823121}
   - {fileID: 704428515}
-  - {fileID: 1450643908}
   - {fileID: 2073070384}
+  - {fileID: 1450643908}
   - {fileID: 290374136}
   - {fileID: 1144373883}
   - {fileID: 1125699512}
