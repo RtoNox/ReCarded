@@ -23,6 +23,8 @@ public class PoisonField : MonoBehaviour
         tickRate = newTickRate;
         enemyLayer = newEnemyLayer;
 
+        transform.localScale = new Vector3(radius * 2f, radius * 2f, 1f);
+
         StartCoroutine(PoisonRoutine());
     }
 
